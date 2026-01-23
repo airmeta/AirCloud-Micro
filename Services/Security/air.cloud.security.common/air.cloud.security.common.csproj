@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Auths\UserAccounts\" />
+  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Air.Cloud.Core" Version="2.0.0-alpha-251225" />
+		<PackageReference Include="Air.Cloud.Core.Extensions" Version="2.0.0-alpha-251223" />
+		<PackageReference Include="Air.Cloud.Modules.RedisCache" Version="2.0.0-alpha-251223" />
+		<PackageReference Include="Air.Cloud.Modules.SkyMirrorShield" Version="2.0.0-alpha-251230" />
+		<PackageReference Include="Air.Cloud.Plugins.SpecificationDocument" Version="2.0.0-alpha-251223" />
+		<PackageReference Include="Oracle.EntityFrameworkCore" Version="7.21.13" />
+		<PackageReference Include="Air.Cloud.WebApp" Version="2.0.0-alpha-251223" />
+	</ItemGroup>
+</Project>

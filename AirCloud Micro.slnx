@@ -1,0 +1,32 @@
+<Solution>
+  <Folder Name="/AirCloud Micro GateWay/" />
+  <Folder Name="/AirCloud Micro Open/">
+    <Project Path="Services/Open/air.cloud.open.entry/air.cloud.open.entry.csproj" Id="0b022825-3818-4ed2-b070-ce795dd50569" />
+    <Project Path="Services/Open/air.cloud.open.model/air.cloud.open.model.csproj" />
+    <Project Path="Services/Open/air.cloud.open.repository/air.cloud.open.repository.csproj" />
+    <Project Path="Services/Open/air.cloud.open.service/air.cloud.open.service.csproj" />
+  </Folder>
+  <Folder Name="/AirCloud Micro Security/">
+    <Project Path="Services/Security/Auth/air.cloud.auth.entry/air.cloud.auth.entry.csproj" Id="1a8cc6a5-d5b1-46e5-9875-abe8c337cd76" />
+    <Project Path="Services/Security/System/air.cloud.system.entry/air.cloud.system.entry.csproj" Id="72e723e3-7434-4d39-80ad-441c43b5c8ac" />
+  </Folder>
+  <Folder Name="/AirCloud Micro Security/Account/">
+    <Project Path="air.cloud.account.service/air.cloud.account.service.csproj" Id="a75bf22d-2684-4054-a2b3-681987897ea9" />
+  </Folder>
+  <Folder Name="/AirCloud Micro Security/Auth/">
+    <Project Path="Services/Security/Auth/air.cloud.auth.domain/air.cloud.auth.domain.csproj" Id="7778e18a-4ace-48e0-bced-fa1d9bd02d6b" />
+    <Project Path="Services/Security/Auth/air.cloud.auth.model/air.cloud.auth.model.csproj" Id="37302bc2-41c3-4b0c-9794-e09896440ac1" />
+    <Project Path="Services/Security/Auth/air.cloud.auth.repository/air.cloud.auth.repository.csproj" Id="cd199f49-a1bc-462f-b216-16bab3fa77e6" />
+    <Project Path="Services/Security/Auth/air.cloud.auth.service/air.cloud.auth.service.csproj" Id="26746d43-e2a9-4ab2-ab7e-08461ac09ce2" />
+  </Folder>
+  <Folder Name="/AirCloud Micro Security/Common/">
+    <Project Path="Services/Security/air.cloud.security.common/air.cloud.security.common.csproj" Id="0200fac2-c2b1-4b95-9e30-f370c848d819" />
+  </Folder>
+  <Folder Name="/AirCloud Micro Security/System/">
+    <Project Path="Services/Security/System/air.cloud.system.domain/air.cloud.system.domain.csproj" Id="e5d596e1-446c-419e-aeae-a620b20e5df9" />
+    <Project Path="Services/Security/System/air.cloud.system.model/air.cloud.system.model.csproj" Id="2a55e7e0-3069-4298-9198-0efc5e53943a" />
+    <Project Path="Services/Security/System/air.cloud.system.open.service/air.cloud.system.open.service.csproj" Id="04ca2cb8-0684-4200-ab9c-a16cbe90f6cd" />
+    <Project Path="Services/Security/System/air.cloud.system.repository/air.cloud.system.repository.csproj" Id="7ff2914f-c82d-48ba-8073-eceb5383f8be" />
+    <Project Path="Services/Security/System/air.cloud.system.service/air.cloud.system.service.csproj" Id="2ae321d4-b287-451e-9f3a-a637d687c594" />
+  </Folder>
+</Solution>

@@ -1,0 +1,88 @@
+[
+  {
+    "Type": 0,
+    "ParentId": "0",
+    "Title": "系统管理",
+    "Icon": "IconProSettingOutlined",
+    "Path": "/system",
+    "Component": null,
+    "Hide": 0,
+    "SortNumber": 1,
+    "Authority": null,
+    "AppId": "",
+    "Children": [
+      {
+        "Type": 1,
+        "ParentId": "301",
+        "Title": "区域管理",
+        "Icon": "IconProUserOutlined",
+        "Path": "/system/region",
+        "Component": "/system/region",
+        "Hide": 0,
+        "SortNumber": 1,
+        "Authority": null,
+        "AppId": ""
+      },
+      {
+        "Type": 1,
+        "ParentId": "301",
+        "Title": "应用管理",
+        "Icon": "IconProUserOutlined",
+        "Path": "/system/app",
+        "Component": "/system/app",
+        "Hide": 0,
+        "SortNumber": 2,
+        "Authority": null,
+        "AppId": ""
+      },
+      {
+        "Type": 1,
+        "ParentId": "301",
+        "Title": "部门管理",
+        "Icon": "IconProUserOutlined",
+        "Path": "/system/organization",
+        "Component": "/system/organization",
+        "Hide": 0,
+        "SortNumber": 3,
+        "Authority": null,
+        "AppId": ""
+      },
+      {
+        "Type": 1,
+        "ParentId": "301",
+        "Title": "菜单管理",
+        "Icon": "IconProAppstoreOutlined",
+        "Path": "/system/menu",
+        "Component": "/system/menu",
+        "Hide": 0,
+        "SortNumber":4,
+        "Authority": null,
+        "AppId": ""
+      },
+      {
+        "Type": 1,
+        "ParentId": "301",
+        "Title": "角色管理",
+        "Icon": "IconProIdcardOutlined",
+        "Path": "/system/role",
+        "Component": "/system/role",
+        "Hide": 0,
+        "SortNumber": 5,
+        "Authority": null,
+        "AppId": ""
+      },
+      {
+        "Type": 1,
+        "ParentId": "301",
+        "Title": "用户管理",
+        "Icon": "IconProUserOutlined",
+        "Path": "/system/user",
+        "Component": "/system/user",
+        "Hide": 0,
+        "SortNumber": 6,
+        "Authority": null,
+        "AppId": ""
+      }
+    ]
+  }
+]
