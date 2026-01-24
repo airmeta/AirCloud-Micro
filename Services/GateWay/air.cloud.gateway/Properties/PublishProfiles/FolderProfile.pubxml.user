@@ -3,7 +3,7 @@
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>G:\星曳数据\研究院\AirCloud-Micro\Services\GateWay\air.cloud.gateway\bin\Release\net6.0\publish\</_PublishTargetUrl>
-    <History>True|2026-01-24T10:35:03.9049985Z||;True|2026-01-24T17:29:58.0038010+08:00||;</History>
+    <History>True|2026-01-24T11:42:19.2443542Z||;True|2026-01-24T18:35:03.9049985+08:00||;True|2026-01-24T17:29:58.0038010+08:00||;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>

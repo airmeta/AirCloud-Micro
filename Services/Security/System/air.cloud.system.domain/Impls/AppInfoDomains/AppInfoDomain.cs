@@ -301,7 +301,7 @@ namespace air.cloud.system.domain.Impls.AppInfoDomains
             apps = await entityAssociationDomain.GetEntityAssociationsAsync(associations.Select(s => s.TargetEntityId).ToList(), string.Empty, AssociationTypeEnum.部门与应用);
 
             var departmentApps = await repository.DetachedEntities
-                .Where(x => apps.Select(a => a.TargetEntityId).Contains(x.Id))
+                .Where(x => apps.Select(a => a.TargetEntityId).Contains(x.AppId))
                 .Select(x => new AccountAppIdsRDto
                 {
                     AppId = x.AppId,

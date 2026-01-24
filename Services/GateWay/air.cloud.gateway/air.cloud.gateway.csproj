@@ -10,7 +10,7 @@
 		<PackageReference Include="Air.Cloud.DataBase.ElasticSearch" Version="2.0.0-alpha-251223" />
 		<PackageReference Include="Air.Cloud.Modules.Consul" Version="2.0.0-alpha-251223" />
 		<PackageReference Include="Air.Cloud.Modules.RedisCache" Version="2.0.0-alpha-251223" />
-		<PackageReference Include="Air.Cloud.Modules.SkyMirrorShield" Version="2.0.0-alpha-260124" />
+		<PackageReference Include="Air.Cloud.Modules.SkyMirrorShield" Version="2.0.0-alpha-260124-1" />
 		<PackageReference Include="Air.Cloud.Modules.Taxin" Version="2.0.0-alpha-251223" />
 		<PackageReference Include="Air.Cloud.WebApp" Version="2.0.0-alpha-251223" />
 		<PackageReference Include="Ocelot" Version="17.0.1" />
