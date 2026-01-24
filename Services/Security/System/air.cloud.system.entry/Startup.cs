@@ -1,4 +1,15 @@
-﻿using air.cloud.security.common.Auths;
+﻿/*
+ * Copyright (c) 2024-2030 星曳数据
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ *
+ * This file is provided under the Mozilla Public License Version 2.0,
+ * and the "NO WARRANTY" clause of the MPL is hereby expressly
+ * acknowledged.
+ */
+using air.cloud.security.common.Auths;
 
 using Air.Cloud.Core.App.Startups;
 using Air.Cloud.DataBase.Filters;
@@ -11,7 +22,7 @@ using Air.Cloud.WebApp.Extensions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace air.security.entry
+namespace air.cloud.system.entry
 {
     public class Startup : AppStartup
     { 

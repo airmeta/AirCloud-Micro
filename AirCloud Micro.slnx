@@ -1,5 +1,7 @@
 <Solution>
-  <Folder Name="/AirCloud Micro GateWay/" />
+  <Folder Name="/AirCloud Micro GateWay/">
+    <Project Path="Services/GateWay/air.cloud.gateway/air.cloud.gateway.csproj" Id="39cd977d-c410-4f93-a439-394e584c197a" />
+  </Folder>
   <Folder Name="/AirCloud Micro Open/">
     <Project Path="Services/Open/air.cloud.open.entry/air.cloud.open.entry.csproj" Id="0b022825-3818-4ed2-b070-ce795dd50569" />
     <Project Path="Services/Open/air.cloud.open.model/air.cloud.open.model.csproj" />
@@ -11,7 +13,8 @@
     <Project Path="Services/Security/System/air.cloud.system.entry/air.cloud.system.entry.csproj" Id="72e723e3-7434-4d39-80ad-441c43b5c8ac" />
   </Folder>
   <Folder Name="/AirCloud Micro Security/Account/">
-    <Project Path="air.cloud.account.service/air.cloud.account.service.csproj" Id="a75bf22d-2684-4054-a2b3-681987897ea9" />
+    <Project Path="Services/Security/Account/air.cloud.account.entry/air.cloud.account.entry.csproj" Id="d8861a09-aeff-469c-a3c7-d92989200c2b" />
+    <Project Path="Services/Security/Account/air.cloud.account.service/air.cloud.account.service.csproj" />
   </Folder>
   <Folder Name="/AirCloud Micro Security/Auth/">
     <Project Path="Services/Security/Auth/air.cloud.auth.domain/air.cloud.auth.domain.csproj" Id="7778e18a-4ace-48e0-bced-fa1d9bd02d6b" />

@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "新建配置文件",
+    "Projects": [
+      {
+        "Path": "Services\\Security\\Auth\\air.cloud.auth.entry\\air.cloud.auth.entry.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Services\\Security\\System\\air.cloud.system.entry\\air.cloud.system.entry.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
