@@ -5,5 +5,14 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
-
+	<ItemGroup>
+		<PackageReference Include="Air.Cloud.Modules.Consul" Version="2.0.0-alpha-251223" />
+		<PackageReference Include="Air.Cloud.Modules.SkyMirrorShield" Version="2.0.0-alpha-260131" />
+		<PackageReference Include="Air.Cloud.Modules.Taxin" Version="2.0.0-alpha-260205-1" />
+		<PackageReference Include="Air.Cloud.WebApp" Version="2.0.0-alpha-251223" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\air.cloud.open.domain\air.cloud.open.domain.csproj" />
+	  <ProjectReference Include="..\air.cloud.open.service\air.cloud.open.service.csproj" />
+	</ItemGroup>
 </Project>

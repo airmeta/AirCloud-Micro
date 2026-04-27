@@ -86,6 +86,12 @@ namespace air.cloud.system.model.Dtos.AppInfoDtos
         /// </summary>
         public IsOrNotEnum EnableMFA { get; set; }
 
+        /// <summary>
+        /// <para>zh-cn:是否启用</para> 
+        /// <para>en-us:Is Enabled</para>
+        /// </summary>
+        public IsOrNotEnum IsEnable { get; set; } = IsOrNotEnum.是;
+
     }
 
     /// <summary>
@@ -156,6 +162,13 @@ namespace air.cloud.system.model.Dtos.AppInfoDtos
         /// <para>en-us:Enable Multi-Factor Authentication</para>
         /// </summary>
         public IsOrNotEnum EnableMFA { get; set; }
+
+
+        /// <summary>
+        /// <para>zh-cn:是否启用</para> 
+        /// <para>en-us:Is Enabled</para>
+        /// </summary>
+        public IsOrNotEnum IsEnable { get; set; }
 
     }
 

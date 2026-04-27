@@ -12,10 +12,12 @@
 using air.cloud.security.common.Base.Dtos;
 using air.cloud.security.common.Dtos;
 using air.cloud.security.common.Model;
+using air.cloud.system.model.Dtos.AppAuthDtos;
 using air.cloud.system.model.Dtos.AppInfoDtos;
-using air.cloud.system.model.Entitys.Apps;
+using air.cloud.system.model.Dtos.AppRouteDtos;
 
 using Air.Cloud.Core.Standard.DynamicServer;
+
 
 namespace air.cloud.system.service.Services.AppServices
 {
@@ -41,7 +43,7 @@ namespace air.cloud.system.service.Services.AppServices
         /// </summary>
         /// <param name="appId"></param>
         /// <returns></returns>
-        public Task<AppRoute> GetAppRouteAsync(string Id);
+        public Task<AppRouteSDto> GetAppRouteAsync(string Id);
 
         /// <summary>
         /// <para>zh-cn:查询应用所有路由授权信息</para>
@@ -49,7 +51,7 @@ namespace air.cloud.system.service.Services.AppServices
         /// </summary>
         /// <param name="BindAppId"></param>
         /// <returns></returns>
-        Task<IList<AppRouteCacheDto>> QueryAllAppRouteAuthAsync(string BindAppId);
+        Task<AppAllRouteAuthResultDto> QueryAllAppRouteAuthAsync(string BindAppId);
 
         #region 查询应用路由列表或下拉框
 
@@ -59,7 +61,7 @@ namespace air.cloud.system.service.Services.AppServices
         /// </summary>
         /// <param name="dto"></param>
         /// <returns></returns>
-        public Task<PageList<AppRoute>> QueryAppRoutesAsync(BaseQDto dto);
+        public Task<PageList<AppRouteSDto>> QueryAppRoutesAsync(BaseQDto dto);
         #endregion
 
 
@@ -71,7 +73,7 @@ namespace air.cloud.system.service.Services.AppServices
         /// </summary>
         /// <param name="dto"></param>
         /// <returns></returns>
-        Task<PageList<AppRouteCacheDto>> QueryAppRouteAuthAsync(BaseQDto dto);
+        Task<PageList<AppRouteAuthResultDto>> QueryAppRouteAuthAsync(BaseQDto dto);
 
         /// <summary>
         /// <para>zh-cn:绑定应用路由到具体应用</para>
@@ -112,6 +114,14 @@ namespace air.cloud.system.service.Services.AppServices
 
         #endregion
 
+
+        /// <summary>
+        /// <para>zh-cn:通过路由编号列表查询路由数据信息</para>
+        /// <para>en-us:Query Route Data by Route Ids List</para>
+        /// </summary>
+        /// <param name="dto"></param>
+        /// <returns></returns>
+        Task<IList<AppRouteQueryByIdsResultDto>> QueryAppRouteDataAsync(AppRouteQueryByIdsDto dto);
 
     }
 }

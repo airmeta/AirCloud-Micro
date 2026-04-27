@@ -1,0 +1,9 @@
+import { createAppSettings } from "@root/base/base_settings";
+
+export const defaultSettings: AppSettings = createAppSettings({
+   // 应用编号--迁移到新的地方部署时请更换为对应的AppId
+  appId: "2be25202569b4e0c8112fddb50b37a67",
+  // 应用公钥 --迁移到新的地方部署时请更换为对应的公钥
+  //appPublicKey: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlJck5yVQ3m8AFlsgUn21qfUftUjhhGJwJ/J4kYKDTZXBOJEcSmihvz9pB4GFRgB7nAbSCPDTi9Cp3grJpVru4WSrY7JTvN5/xZmi4HXGrsupIwyRGC2gJSmWnix9w6TCIQ3IvX0ccRbhVfT49q13hmo5ZltfIddYteI8MaUFqEcvLEkugh8woiAkmJ2JG75I+4gD1ayEMXKi9VvbLrx9lUm0Lh/Cmjtun9aLliggybHv43vVy6jZQG1Q/IpPOkl22OTgRGaDptamrx+wWI2g+gOJRvMmEMXXEsgr544iZARYUc2kv8vgns8E7ikYoGMYMCmpRfS59N4CCJ/4rkeLQIDAQAB"
+  appPublicKey: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlwEFgsNhrc43v2df03GZUFIiA3NvPuUy4GhI8hSCEbrSvcmINquMBpP1MlK9Upo0wbnqXncVRnawdEG3UaGIevWoAO76ainrQM7m+7hIqb5duLBC+bTHOp2+P5pnTwOb8M7/OUBP6+VEKm2zG+VvU7NAZUhUSzuFoJIbq3dF/MQYyxiVVGYS7Qy1YYYhaG81ypFm59uguqS07YKPfDUpaQejmKEmXf6OsKSyNE342wjAE0dFOifrdNCKE1AO6ndlZ0fOPVEWx9A9Y60jKWUfQfyoYtYrAeNlfA4jNcWVuF9/dpVREqOAyQeShJ+V99Ul+Mor4YJ250lOq8Ymk9b0dQIDAQAB"
+});

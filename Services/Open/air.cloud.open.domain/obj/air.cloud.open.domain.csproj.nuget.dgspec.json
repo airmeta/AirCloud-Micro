@@ -1,0 +1,327 @@
+{
+  "format": 1,
+  "restore": {
+    "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.domain\\air.cloud.open.domain.csproj": {}
+  },
+  "projects": {
+    "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.domain\\air.cloud.open.domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.domain\\air.cloud.open.domain.csproj",
+        "projectName": "air.cloud.open.domain",
+        "projectPath": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.domain\\air.cloud.open.domain.csproj",
+        "packagesPath": "C:\\Users\\23129\\.nuget\\packages\\",
+        "outputPath": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Microsoft\\Visual Studio Shared\\2022\\Preview\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\23129\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.cdn.azure.cn/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.model\\air.cloud.open.model.csproj": {
+                "projectPath": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.model\\air.cloud.open.model.csproj"
+              },
+              "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.repository\\air.cloud.open.repository.csproj": {
+                "projectPath": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.repository\\air.cloud.open.repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.200"
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200-preview.0.26103.119\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.model\\air.cloud.open.model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.model\\air.cloud.open.model.csproj",
+        "projectName": "air.cloud.open.model",
+        "projectPath": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.model\\air.cloud.open.model.csproj",
+        "packagesPath": "C:\\Users\\23129\\.nuget\\packages\\",
+        "outputPath": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.model\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Microsoft\\Visual Studio Shared\\2022\\Preview\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\23129\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.cdn.azure.cn/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Security\\air.cloud.security.common\\air.cloud.security.common.csproj": {
+                "projectPath": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Security\\air.cloud.security.common\\air.cloud.security.common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.200"
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200-preview.0.26103.119\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.repository\\air.cloud.open.repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.repository\\air.cloud.open.repository.csproj",
+        "projectName": "air.cloud.open.repository",
+        "projectPath": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.repository\\air.cloud.open.repository.csproj",
+        "packagesPath": "C:\\Users\\23129\\.nuget\\packages\\",
+        "outputPath": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Microsoft\\Visual Studio Shared\\2022\\Preview\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\23129\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.cdn.azure.cn/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Security\\air.cloud.security.common\\air.cloud.security.common.csproj": {
+                "projectPath": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Security\\air.cloud.security.common\\air.cloud.security.common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.200"
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Air.Cloud.DataBase": {
+              "target": "Package",
+              "version": "[2.0.0-alpha-251223, )"
+            },
+            "Oracle.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.21.13, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200-preview.0.26103.119\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Security\\air.cloud.security.common\\air.cloud.security.common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Security\\air.cloud.security.common\\air.cloud.security.common.csproj",
+        "projectName": "air.cloud.security.common",
+        "projectPath": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Security\\air.cloud.security.common\\air.cloud.security.common.csproj",
+        "packagesPath": "C:\\Users\\23129\\.nuget\\packages\\",
+        "outputPath": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Security\\air.cloud.security.common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Microsoft\\Visual Studio Shared\\2022\\Preview\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\23129\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.cdn.azure.cn/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.200"
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Air.Cloud.Core": {
+              "target": "Package",
+              "version": "[2.0.0-alpha-260205, )"
+            },
+            "Air.Cloud.Core.Extensions": {
+              "target": "Package",
+              "version": "[2.0.0-alpha-251223, )"
+            },
+            "Air.Cloud.Modules.RedisCache": {
+              "target": "Package",
+              "version": "[2.0.0-alpha-251223, )"
+            },
+            "Air.Cloud.Modules.SkyMirrorShield": {
+              "target": "Package",
+              "version": "[2.0.0-alpha-260131, )"
+            },
+            "Air.Cloud.Plugins.SpecificationDocument": {
+              "target": "Package",
+              "version": "[2.0.0-alpha-251223, )"
+            },
+            "Air.Cloud.WebApp": {
+              "target": "Package",
+              "version": "[2.0.0-alpha-251223, )"
+            },
+            "Oracle.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.21.13, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200-preview.0.26103.119\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

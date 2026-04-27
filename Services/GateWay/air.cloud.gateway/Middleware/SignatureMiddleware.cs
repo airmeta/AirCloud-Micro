@@ -38,17 +38,7 @@ namespace air.cloud.gateway.Middleware
         /// <summary>
         /// 查询应用
         /// </summary>
-        public string? AppQueryUrl => AppConfigurationLoader.InnerConfiguration["SkyMirrorShieldSettings:SkyMirrorShieldHeaderValid:AppQueryUrl"];
-
-        /// <summary>
-        /// 应用路由查询
-        /// </summary>
-        public string? RouteQueryUrl => AppConfigurationLoader.InnerConfiguration["SkyMirrorShieldSettings:SkyMirrorShieldHeaderValid:RouteQueryUrl"];
-
-        /// <summary>
-        /// 票据验证
-        /// </summary>
-        public string? TicketValidUrl => AppConfigurationLoader.InnerConfiguration["SkyMirrorShieldSettings:SkyMirrorShieldHeaderValid:TicketValidUrl"];
+        public string? AppQueryUrl => AppConfigurationLoader.InnerConfiguration["SkyMirrorShieldSettings:AppCheck:AppQueryUrl"];
 
         private readonly IHttpClientFactory httpClientFactory;
 
@@ -327,41 +317,6 @@ namespace air.cloud.gateway.Middleware
                 }
             }
         }
-
-        private async Task<IList<AppRouteCacheDto>> QueryAppRouteAsync(string? AppId)
-        {
-            if (string.IsNullOrEmpty(AppId)) return null;
-            if (string.IsNullOrEmpty(RouteQueryUrl))
-            {
-                throw new ConfigurationErrorsException("RouteQueryUrl配置为空");
-            }
-            var storeRoutes=AppRealization.RedisCache.String.Get($"App:RouteAuth:{AppId}");
-            if (storeRoutes.IsNullOrEmpty())
-            {
-                using (HttpClient client = httpClientFactory.CreateClient())
-                {
-                    client.Timeout = new TimeSpan(0, 3, 0);
-                    var result = await client.GetAsync(RouteQueryUrl.Replace("{AppId}", AppId));
-                    if (result.StatusCode == System.Net.HttpStatusCode.OK)
-                    {
-                        string Result = await result.Content.ReadAsStringAsync();
-                        var data = AppRealization.JSON.Deserialize<RESTfulResult<IList<AppRouteCacheDto>>>(Result);
-                        return data.Data;
-                    }
-                    else
-                    {
-                        return null;
-                    }
-                }
-            }
-            else
-            {
-                IList<AppRouteCacheDto> appRoutes=AppRealization.JSON.Deserialize<IList<AppRouteCacheDto>>(storeRoutes);
-                return appRoutes;
-            }
-               
-        }
-
 
     }
 }

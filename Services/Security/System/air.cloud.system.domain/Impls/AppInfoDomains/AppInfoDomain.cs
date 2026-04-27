@@ -22,11 +22,14 @@ using air.cloud.system.model.Dtos.AccountDtos;
 using air.cloud.system.model.Dtos.AppInfoDtos;
 using air.cloud.system.model.Entitys.Apps;
 
+using Air.Cloud.Core;
 using Air.Cloud.Core.App;
 using Air.Cloud.Core.Extensions;
 using Air.Cloud.Core.Extensions.Linqs;
 using Air.Cloud.Core.Plugins.Security.RSA;
 using Air.Cloud.Core.Plugins.Security.SM2;
+using Air.Cloud.Core.Standard.SkyMirror;
+using Air.Cloud.Core.Standard.SkyMirror.Model;
 using Air.Cloud.DataBase.Extensions;
 using Air.Cloud.DataBase.Repositories;
 using Air.Cloud.WebApp.FriendlyException;
@@ -43,6 +46,8 @@ namespace air.cloud.system.domain.Impls.AppInfoDomains
         private readonly IUserDomain userDomain;
         private readonly IEntityAssociationDomain entityAssociationDomain;
         private readonly IUserAccountStore userAccountStore;
+
+        private readonly IAppRouteDomain routeDomain;
 
         /// <summary>
         /// <para>zh-cn:当前程序密钥私钥</para>
@@ -71,7 +76,7 @@ namespace air.cloud.system.domain.Impls.AppInfoDomains
             this.roleDomain = roleDomain;
         }
 
-        public async Task<bool> CreateAppAsync(AppInfoCreateDto dto, IsOrNotEnum IsDefault = IsOrNotEnum.否)
+        public async Task<bool> CreateAppAsync(AppInfoCreateDto dto, IsOrNotEnum IsDefault = IsOrNotEnum.否,IsOrNotEnum CanDelete=IsOrNotEnum.是)
         {
             AppInformation app = dto.Adapt<AppInformation>();
             
@@ -91,6 +96,8 @@ namespace air.cloud.system.domain.Impls.AppInfoDomains
             }
             app.IsDefault = IsDefault;
             app.Description = dto.Description;
+            app.CanDelete= CanDelete;
+            app.IsEnable = dto.IsEnable;
             switch (dto.AppEncryptType)
             {
                 case AppEntryptTypeEnum.RSA:
@@ -133,8 +140,10 @@ namespace air.cloud.system.domain.Impls.AppInfoDomains
                 AppId = AppId,
                 PrivateKey = SecurityAppPrivateKey,
                 AppEncryptType = appEntryptType.Value,
-                IsCommonApp = IsOrNotEnum.否
-            }, IsOrNotEnum.是);
+                IsCommonApp = IsOrNotEnum.否,
+                IsEnable= IsOrNotEnum.是
+            }, IsOrNotEnum.是, IsOrNotEnum.否);
+
 
             string SystemAppId = dto.AppId ?? AppCore.Guid();
             var createAppResult1 = await CreateAppAsync(new AppInfoCreateDto()
@@ -144,9 +153,26 @@ namespace air.cloud.system.domain.Impls.AppInfoDomains
                 AppId = SystemAppId,
                 PrivateKey = dto.PrivateKey,
                 AppEncryptType = dto.AppEncryptType,
-                IsCommonApp = IsOrNotEnum.否
-            }, IsOrNotEnum.否);
+                IsCommonApp = IsOrNotEnum.否,
+                IsEnable = IsOrNotEnum.是
+            }, IsOrNotEnum.否, IsOrNotEnum.否);
             var createUserResult = await userDomain.CreatDefaultAccountAsync(this, dto.DefaultAccount, SystemAppId);
+
+            /** 把本服务中的所有路由信息全部初始化进AppRoute中*/
+
+            var currentClientRoutes = ISkyMirrorShieldClientStandard.ClientEndpointDatas.Select(s => new AppRouteSDto()
+            {
+                AppId = SystemAppId,
+                Description = s.Description,
+                Route = s.Path,
+                AllowAnonymous = s.IsAllowAnonymous ? IsOrNotEnum.是 : IsOrNotEnum.否,
+                AuthorizationMetas = s.AuthorizeDatas,
+                RequiresAuthorization = s.RequiresAuthorization ? IsOrNotEnum.是 : IsOrNotEnum.否,
+                Method = s.Method
+            }).ToList();
+
+            await routeDomain.BindCurrentServiceAllRouteToAppAsync(currentClientRoutes, SystemAppId);
+
             return createAppResult && createUserResult;
         }
         public async Task<AppInformation> GetFirstAppAsync()
@@ -173,7 +199,7 @@ namespace air.cloud.system.domain.Impls.AppInfoDomains
             UserAccountFactory userAccountFactory = await userAccountStore.GetUserAccountAsync();
             var app = await repository.DetachedEntities.FirstOrDefaultAsync(x => x.AppId == appId || x.Id == appId);
             if (app == null) return true;
-
+            if (app.CanDelete==IsOrNotEnum.否) throw Oops.Oh("此应用为基础应用,无法删除");
             //查询App下是否有用户
             var departmentAssociationApp = await entityAssociationDomain.GetEntityAssociationsAsync(app.Id, string.Empty, AssociationTypeEnum.部门与应用);
             if (departmentAssociationApp.Any()) throw Oops.Oh("应用下有关联部门，无法删除");
@@ -201,7 +227,8 @@ namespace air.cloud.system.domain.Impls.AppInfoDomains
             {
                 Id = s.AppId,
                 Name = s.AppName,
-                Description = s.Description
+                Description = s.Description,
+                IsEnable = s.IsEnable
             }).ToListAsync();
             return list;
         }
@@ -244,6 +271,7 @@ namespace air.cloud.system.domain.Impls.AppInfoDomains
             app.AppEncryptType = dto.AppEncryptType;
             app.Logo = dto.Logo;
             app.IsCommonApp = dto.IsCommonApp;
+            app.IsEnable = dto.IsEnable;
             await repository.UpdateIncludeAsync(app, new string[]
             {
                 nameof(AppInformation.AppName),
@@ -252,7 +280,8 @@ namespace air.cloud.system.domain.Impls.AppInfoDomains
                 nameof(AppInformation.AppPrivateKey),
                 nameof(AppInformation.AppEncryptType),
                 nameof(AppInformation.Logo),
-                nameof(AppInformation.IsCommonApp)
+                nameof(AppInformation.IsCommonApp),
+                nameof(AppInformation.IsEnable)
             });
             return true;
         }

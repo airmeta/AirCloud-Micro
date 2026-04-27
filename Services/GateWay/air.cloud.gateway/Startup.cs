@@ -12,15 +12,20 @@
 using air.cloud.gateway.Middleware;
 using air.cloud.gateway.Modules.TraceLogModules;
 using air.cloud.gateway.Options;
+using air.cloud.security.common.Plugins;
 
 using Air.Cloud.Core;
 using Air.Cloud.Core.App;
 using Air.Cloud.Core.App.Startups;
 using Air.Cloud.Core.Attributes;
+using Air.Cloud.Core.Plugins.InternalAccess;
 using Air.Cloud.Core.Standard.TraceLog;
 using Air.Cloud.Modules.Consul.Model;
 using Air.Cloud.Modules.Consul.Util;
 using Air.Cloud.Modules.SkyMirrorShield.Middleware;
+using Air.Cloud.Modules.Taxin.Extensions;
+using Air.Cloud.Modules.Taxin.Server;
+using Air.Cloud.Modules.Taxin.Store;
 
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
@@ -41,9 +46,9 @@ namespace air.cloud.gateway
             app.UseCors("CorsPolicy");
             app.UseWebSockets();
             app.UseSkyMirrorShieldServer();
-            //app.UseTaxinServer<TaxinServerDependency>();
+            app.UseTaxinServer<TaxinServerDependency>();
             app.UseMiddleware<TraceLogMiddleware>();
-            app.UseMiddleware<SkyMirrorShieldMiddleware>();
+            app.UseMiddleware<SkyMirrorShieldMiddlewareRe>();
             app.UseMiddleware<SignatureMiddleware>();
             app.UseMiddleware<WhiteListRequestMiddleware>();
             app.UseMiddleware<IPMiddleware>();
@@ -52,6 +57,7 @@ namespace air.cloud.gateway
 
         public override void ConfigureServices(IServiceCollection services)
         {
+            services.AddTaxinServer<TaxinServerDependency, TaxinStoreDependency>();
             // services.AddGateWayPlugins();
             #region 加载配置信息
             var options = AppConfigurationLoader.InnerConfiguration.GetConfig<ConsulServiceOptions>();
@@ -88,6 +94,9 @@ namespace air.cloud.gateway
                 });
             //services.AddTaxinServer<TaxinServerDependency, TaxinStoreDependency>();
             services.AddSkyMirrorShieldServer();
+
+            AppRealization.AppPlugin.SetPlugin<IInternalAccessValidPlugin>(new InternalAccessValidPlugin());
+
             #region  表单上传配置
             services.Configure<FormOptions>(x =>
             {

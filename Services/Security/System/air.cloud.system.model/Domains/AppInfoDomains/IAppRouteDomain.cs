@@ -17,6 +17,8 @@ using air.cloud.security.common.Model;
 
 using Air.Cloud.Core.Standard.DataBase.Domains;
 using Air.Cloud.Core.Standard.DynamicServer;
+using air.cloud.system.model.Dtos.AppAuthDtos;
+using air.cloud.system.model.Dtos.AppRouteDtos;
 
 namespace air.cloud.system.model.Domains.AppInfoDomains
 {
@@ -54,7 +56,7 @@ namespace air.cloud.system.model.Domains.AppInfoDomains
         /// </summary>
         /// <param name="dto"></param>
         /// <returns></returns>
-        public Task<PageList<AppRoute>> QueryAppRoutesAsync(BaseQDto dto);
+        public Task<PageList<AppRouteSDto>> QueryAppRoutesAsync(BaseQDto dto);
         /// <summary>
         /// <para>zh-cn:绑定应用路由到具体应用</para>
         /// <para>en-us:Bind AppRoute to specific App</para>
@@ -97,14 +99,31 @@ namespace air.cloud.system.model.Domains.AppInfoDomains
         /// </summary>
         /// <param name="dto"></param>
         /// <returns></returns>
-        Task<PageList<AppRouteCacheDto>> QueryAppRouteAuthAsync(BaseQDto dto);
+        Task<PageList<AppRouteAuthResultDto>> QueryAppRouteAuthAsync(BaseQDto dto);
         /// <summary>
         /// <para>zh-cn:查询应用所有路由授权信息</para>
         /// <para>en-us:Query All AppRoute Auth Info</para>
         /// </summary>
         /// <param name="BindAppId"></param>
         /// <returns></returns>
-        Task<IList<AppRouteCacheDto>> QueryAllAppRouteAuthAsync(string BindAppId);
+        Task<AppAllRouteAuthResultDto> QueryAllAppRouteAuthAsync(string BindAppId);
+
+
+        /// <summary>
+        /// <para>zh-cn:绑定当前所有服务路由到应用</para>
+        /// <para>en-us:Bind Current Service All Routes to App</para>
+        /// </summary>
+        /// <returns></returns>
+        Task<bool> BindCurrentServiceAllRouteToAppAsync(IList<AppRouteSDto> routes,string AppId);
+
+
+        /// <summary>
+        /// <para>zh-cn:通过多个Ids查询App路由</para>
+        /// <para>en-us:Query AppRoute by multiple Ids</para>
+        /// </summary>
+        /// <param name="dto"></param>
+        /// <returns></returns>
+        Task<IList<AppRouteQueryByIdsResultDto>> QueryAppRouteDataAsync(AppRouteQueryByIdsDto dto);
 
     }
 }

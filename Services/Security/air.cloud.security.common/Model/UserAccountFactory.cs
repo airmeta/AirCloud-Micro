@@ -12,8 +12,13 @@
 using air.cloud.security.common.Enums;
 
 using Air.Cloud.Core;
+using Air.Cloud.Core.Extensions;
 using Air.Cloud.Core.Plugins.Security.RSA;
 using Air.Cloud.Core.Plugins.Security.SM2;
+
+using Newtonsoft.Json;
+
+using System.Text.Json.Serialization;
 
 namespace air.cloud.security.common.Model
 {
@@ -72,18 +77,6 @@ namespace air.cloud.security.common.Model
         public string PhoneNumber { get; set; }
 
         /// <summary>
-        /// <para>zh-cn:身份证号码 解密版</para>
-        /// <para>en-us:ID Card Number Decrypted Version</para>
-        /// </summary>
-        public string IdCardNoDecrypt => EntryptType == AppEntryptTypeEnum.RSA ? RsaEncryption.Decrypt(IdCardNo, PrivateKey, PrivateKey) : SM2Encryption.Decrypt(IdCardNo, PrivateKey);
-
-        /// <summary>
-        /// <para>zh-cn:手机号码 解密版</para>
-        /// <para>en-us:Phone Number Decrypted Version</para>
-        /// </summary>
-        public string PhoneNumberDecrypt => EntryptType == AppEntryptTypeEnum.RSA ? RsaEncryption.Decrypt(PhoneNumber, PrivateKey, PrivateKey) : SM2Encryption.Decrypt(PhoneNumber, PrivateKey);
-
-        /// <summary>
         /// <para>zh-cn:邮箱账户</para>
         /// <para>en-us:Email Account</para>
         /// </summary>
@@ -124,6 +117,22 @@ namespace air.cloud.security.common.Model
         /// <para>en-us:List of departments the user belongs to</para>
         /// </summary>
         public IList<DepartmentsInfo> Departments { get; set; }=new List<DepartmentsInfo>();
+
+        /// <summary>
+        /// <para>zh-cn:身份证号码 解密版</para>
+        /// <para>en-us:ID Card Number Decrypted Version</para>
+        /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public string IdCardNoDecrypt => IdCardNo.IsNullOrEmpty()?string.Empty: (EntryptType == AppEntryptTypeEnum.RSA ? RsaEncryption.Decrypt(IdCardNo, PrivateKey, PrivateKey) : SM2Encryption.Decrypt(IdCardNo, PrivateKey));
+
+        /// <summary>
+        /// <para>zh-cn:手机号码 解密版</para>
+        /// <para>en-us:Phone Number Decrypted Version</para>
+        /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public string PhoneNumberDecrypt => PhoneNumber.IsNullOrEmpty() ? string.Empty : (EntryptType == AppEntryptTypeEnum.RSA ? RsaEncryption.Decrypt(PhoneNumber, PrivateKey, PrivateKey) : SM2Encryption.Decrypt(PhoneNumber, PrivateKey));
 
 
 

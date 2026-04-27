@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "Bash(pnpm:*)",
+      "Bash(Get-Process node:*)",
+      "Bash(Select-Object Id, ProcessName, Path)",
+      "Bash(Format-Table -AutoSize)",
+      "Bash(taskkill /PID 46500 /F)",
+      "Bash(taskkill /PID 48556 /F)",
+      "Bash(cmd.exe /c taskkill /PID 46500 /F)",
+      "Bash(fc:*)",
+      "Bash(rmdir /s /q \"G:\\\\三实软件\\\\air.security.mono.app\\\\apps\\\\auth\\\\src\\\\styles\")",
+      "Bash(rmdir /s /q \"G:\\\\三实软件\\\\air.security.mono.app\\\\apps\\\\system\\\\src\\\\styles\")",
+      "Bash(cmd /c \"rmdir /s /q \\\\\"G:\\\\三实软件\\\\air.security.mono.app\\\\apps\\\\auth\\\\src\\\\styles\\\\\" & rmdir /s /q \\\\\"G:\\\\三实软件\\\\air.security.mono.app\\\\apps\\\\system\\\\src\\\\styles\\\\\"\")",
+      "Bash(cmd /c del /f /q \"G:\\\\三实软件\\\\air.security.mono.app\\\\apps\\\\auth\\\\src\\\\components\\\\Breadcrumb\\\\index.vue\")",
+      "Bash(cmd /c del /f /q \"G:\\\\三实软件\\\\air.security.mono.app\\\\apps\\\\auth\\\\src\\\\components\\\\AppLink\\\\index.vue\")",
+      "Bash(del:*)",
+      "Bash(cmd.exe /c dir \"G:\\\\三实软件\\\\air.security.mono.app\\\\apps\\\\auth\\\\node_modules\\\\vite\")",
+      "Bash(cmd.exe /c type \"G:\\\\三实软件\\\\air.security.mono.app\\\\apps\\\\auth\\\\node_modules\\\\.bin\\\\vite\")",
+      "Bash(CI=true pnpm install)",
+      "Bash(CI=true pnpm install --no-frozen-lockfile)",
+      "mcp__ide__getDiagnostics"
+    ]
+  }
+}

@@ -9,6 +9,8 @@
  * and the "NO WARRANTY" clause of the MPL is hereby expressly
  * acknowledged.
  */
+using air.cloud.security.common.Enums;
+
 namespace air.cloud.system.model.Dtos.AppInfoDtos
 {
     /// <summary>
@@ -31,5 +33,10 @@ namespace air.cloud.system.model.Dtos.AppInfoDtos
         /// </summary>  
         public string Description { get; set; }
 
+        /// <summary>
+        /// <para>zh-cn:是否启用</para>
+        /// <para>en-us:Whether to enable</para>
+        /// </summary>
+        public IsOrNotEnum IsEnable { get; set; }
     }
 }

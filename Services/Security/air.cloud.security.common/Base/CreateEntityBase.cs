@@ -36,7 +36,7 @@ namespace air.cloud.security.common.Base
         /// 创建时间
         /// </summary>
 
-        [Column("CREATE_TIME")]
+        [Column("CREATE_TIME")] 
         public DateTime? CreateTime { get; set; }
 
     }

@@ -31,5 +31,12 @@ namespace air.cloud.system.model.Entitys.Apps
         [Column("ROUTE_ID")]
         public string RouteId { get; set; }
 
+
+        /// <summary>
+        /// <para>zh-cn:描述</para>
+        /// <para>en-us:Description</para>
+        /// </summary>
+        [Column("DESCRIPTION")]
+        public string? Description {  get; set; }
     }
 }

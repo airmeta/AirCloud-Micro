@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Security\air.cloud.security.common\air.cloud.security.common.csproj" />
+  </ItemGroup>
+
 </Project>

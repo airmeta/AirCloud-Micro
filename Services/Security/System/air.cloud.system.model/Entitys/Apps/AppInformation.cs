@@ -17,6 +17,8 @@ using Air.Cloud.Core.Extensions;
 using Air.Cloud.Core.Plugins.Security.RSA;
 using Air.Cloud.Core.Plugins.Security.SM2;
 
+using Org.BouncyCastle.Crypto.Signers;
+
 namespace air.cloud.system.model.Entitys.Apps
 {
     /// <summary>
@@ -97,6 +99,22 @@ namespace air.cloud.system.model.Entitys.Apps
         /// </summary>
         [Column("IS_COMMON_APP")]
         public IsOrNotEnum IsCommonApp { get; set; } = IsOrNotEnum.否;
+
+
+        /// <summary>
+        /// <para>zh-cn:是否允许删除,通过应用初始化进来的数据不允许删除</para>
+        /// <para>en-us:Whether deletion is allowed, data initialized through the application is not allowed to be deleted</para>
+        /// </summary>
+        [Column("CAN_DELETE")]
+        public IsOrNotEnum CanDelete {  get; set; }
+
+        /// <summary>
+        /// <para>zh-cn:是否启用</para> 
+        /// <para>en-us:Is Enabled</para>
+        /// </summary>
+        [Column("IS_ENABLE")]
+        public IsOrNotEnum IsEnable { get; set; }
+
     }
 
     public static class AppInfoExtensions

@@ -36,7 +36,7 @@ namespace air.cloud.system.model.Domains.AppInfoDomains
         /// <para>en-us:Create App</para>   
         /// </summary>
         /// <returns></returns>
-        public Task<bool> CreateAppAsync(AppInfoCreateDto dto, IsOrNotEnum IsDefault = IsOrNotEnum.否);
+        public Task<bool> CreateAppAsync(AppInfoCreateDto dto, IsOrNotEnum IsDefault = IsOrNotEnum.否, IsOrNotEnum CanDelete = IsOrNotEnum.是);
         /// <summary>
         /// <para>zh-cn:更新App</para>
         /// <para>en-us:Update App</para>

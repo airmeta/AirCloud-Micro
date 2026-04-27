@@ -10,6 +10,9 @@
  * acknowledged.
  */
 using air.cloud.security.common.Base;
+using air.cloud.security.common.Enums;
+
+using Air.Cloud.Core.Standard.SkyMirror.Model;
 
 namespace air.cloud.system.model.Entitys.Apps
 {
@@ -34,7 +37,54 @@ namespace air.cloud.system.model.Entitys.Apps
         /// 描述
         /// </summary>
         [Column("DESCRIPTION")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
+
+
+        /// <summary>
+        /// <para>zh-cn:是否允许匿名访问</para>
+        /// <para>en-us:Whether to allow anonymous access</para>
+        /// </summary>
+        [Column("ALLOW_ANONYMOUS")]
+        public IsOrNotEnum? AllowAnonymous { get; set; }
+
+
+        /// <summary>
+        /// <para>zh-cn:是否需要授权访问</para>
+        /// <para>en-us:Whether authorization is required for access</para>
+        /// </summary>
+        [Column("REQUIRES_AUTHORIZATION")]
+        public IsOrNotEnum? RequiresAuthorization { get; set; }
+
+        /// <summary>
+        /// <para>zh-cn:授权元信息</para>
+        /// <para>en-us:Authorization Meta Information</para>
+        /// </summary>
+        /// <remarks>
+        ///   <para>zh-cn:存储授权信息,JSON数组字符串,元素类型:<see cref="EndPointAuthorizeData"/></para>
+        ///   <para>en-us:Store authorization information, JSON array string, element type: <see cref="EndPointAuthorizeData"/></para>
+        /// </remarks>
+        [Column("AUTHORIZATION_META")]
+        public string AuthorizationMeta { get; set; }
+
+
+        /// <summary>
+        /// <para>zh-cn:请求方法</para>
+        /// <para>en-us:Request Method</para>
+        /// </summary>
+        [Column("METHOD")]
+        public string Method { get; set; }
+
+
+        /// <summary>
+        /// <para>zh-cn:是否自动创建</para>
+        /// <para>en-us:Whether to auto-create</para>
+        /// </summary>
+        /// <remarks>
+        ///  <para>zh-cn:自动创建的路由为网关推送来的路由数据,不可人工修改调整</para>
+        ///  <para>en-us:Auto-created routes are route data pushed by the gateway and cannot be manually modified or adjusted</para>
+        /// </remarks>
+        [Column("IS_AUTO_CREATE")]
+        public IsOrNotEnum IsAutoCreate { get; set; } = IsOrNotEnum.否;
 
     }
 }
