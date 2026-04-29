@@ -46,9 +46,9 @@ namespace air.cloud.gateway
             app.UseCors("CorsPolicy");
             app.UseWebSockets();
             app.UseSkyMirrorShieldServer();
-            app.UseTaxinServer<TaxinServerDependency>();
+            //app.UseTaxinServer<TaxinServerDependency>();
             app.UseMiddleware<TraceLogMiddleware>();
-            app.UseMiddleware<SkyMirrorShieldMiddlewareRe>();
+            app.UseMiddleware<SkyMirrorShieldMiddleware>();
             app.UseMiddleware<SignatureMiddleware>();
             app.UseMiddleware<WhiteListRequestMiddleware>();
             app.UseMiddleware<IPMiddleware>();
@@ -57,8 +57,7 @@ namespace air.cloud.gateway
 
         public override void ConfigureServices(IServiceCollection services)
         {
-            services.AddTaxinServer<TaxinServerDependency, TaxinStoreDependency>();
-            // services.AddGateWayPlugins();
+            //services.AddTaxinServer<TaxinServerDependency, TaxinStoreDependency>();
             #region 加载配置信息
             var options = AppConfigurationLoader.InnerConfiguration.GetConfig<ConsulServiceOptions>();
             var Config = ConfigurationLoader.LoadRemoteConfiguration(options);

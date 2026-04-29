@@ -9,6 +9,7 @@
  * and the "NO WARRANTY" clause of the MPL is hereby expressly
  * acknowledged.
  */
+using Air.Cloud.Core;
 using Air.Cloud.Core.App;
 using Air.Cloud.Core.Attributes;
 using Air.Cloud.WebApp.DataValidation.Internal;
@@ -39,6 +40,11 @@ namespace air.cloud.security.common.ResultProvider
         {
             // 解析异常信息
             var data = UnifyContext.GetExceptionMetadata(context);
+            AppRealization.Output.Print("出现异常", context.Exception.Message, AdditionalParams: new Dictionary<string, object>()
+            {
+                { "ExceptionType", context.Exception.GetType().FullName },
+                { "StackTrace", context.Exception.StackTrace }
+            });
             string errorMsg = context.Exception.InnerException != null && !string.IsNullOrEmpty(context.Exception.InnerException.ToString())
                    ? $"[{context.Exception.InnerException?.Message}]{context.Exception.Message}"
                    : context.Exception.Message;

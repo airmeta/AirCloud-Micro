@@ -17,7 +17,6 @@ using Air.Cloud.Core.App;
 using Air.Cloud.Core.Extensions;
 using Air.Cloud.Core.Plugins.Security.MD5;
 using Air.Cloud.Core.Plugins.Security.RSA;
-using Air.Cloud.Core.Standard.SkyMirror.Model;
 using Air.Cloud.WebApp.UnifyResult.Internal;
 
 using Nest;
@@ -168,6 +167,7 @@ namespace air.cloud.gateway.Middleware
             }
             catch (Exception ex)
             {
+                AppRealization.Output.Print("检查应用时出现异常", ex.Message+ex.Source+ex.StackTrace);
                 context.Response.StatusCode = 200;
                 _ = await context.Response.BodyWriter.WriteAsync(Encoding.UTF8.GetBytes(HttpRequestErrorResultConst.APP_CHECK_ERROR));
                 return;

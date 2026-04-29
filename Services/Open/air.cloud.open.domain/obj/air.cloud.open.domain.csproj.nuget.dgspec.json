@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.domain\\air.cloud.open.domain.csproj": {}
+    "F:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.domain\\air.cloud.open.domain.csproj": {}
   },
   "projects": {
-    "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.domain\\air.cloud.open.domain.csproj": {
+    "F:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.domain\\air.cloud.open.domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.domain\\air.cloud.open.domain.csproj",
+        "projectUniqueName": "F:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.domain\\air.cloud.open.domain.csproj",
         "projectName": "air.cloud.open.domain",
-        "projectPath": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.domain\\air.cloud.open.domain.csproj",
+        "projectPath": "F:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.domain\\air.cloud.open.domain.csproj",
         "packagesPath": "C:\\Users\\23129\\.nuget\\packages\\",
-        "outputPath": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.domain\\obj\\",
+        "outputPath": "F:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Microsoft\\Visual Studio Shared\\2022\\Preview\\NuGetPackages"
@@ -31,13 +31,14 @@
         },
         "frameworks": {
           "net6.0": {
+            "framework": "net6.0",
             "targetAlias": "net6.0",
             "projectReferences": {
-              "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.model\\air.cloud.open.model.csproj": {
-                "projectPath": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.model\\air.cloud.open.model.csproj"
+              "F:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.model\\air.cloud.open.model.csproj": {
+                "projectPath": "F:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.model\\air.cloud.open.model.csproj"
               },
-              "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.repository\\air.cloud.open.repository.csproj": {
-                "projectPath": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.repository\\air.cloud.open.repository.csproj"
+              "F:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.repository\\air.cloud.open.repository.csproj": {
+                "projectPath": "F:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.repository\\air.cloud.open.repository.csproj"
               }
             }
           }
@@ -52,10 +53,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net6.0": {
+          "framework": "net6.0",
           "targetAlias": "net6.0",
           "imports": [
             "net461",
@@ -73,18 +75,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200-preview.0.26103.119\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300-preview.0.26177.108\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.model\\air.cloud.open.model.csproj": {
+    "F:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.model\\air.cloud.open.model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.model\\air.cloud.open.model.csproj",
+        "projectUniqueName": "F:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.model\\air.cloud.open.model.csproj",
         "projectName": "air.cloud.open.model",
-        "projectPath": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.model\\air.cloud.open.model.csproj",
+        "projectPath": "F:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.model\\air.cloud.open.model.csproj",
         "packagesPath": "C:\\Users\\23129\\.nuget\\packages\\",
-        "outputPath": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.model\\obj\\",
+        "outputPath": "F:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Microsoft\\Visual Studio Shared\\2022\\Preview\\NuGetPackages"
@@ -104,10 +106,11 @@
         },
         "frameworks": {
           "net6.0": {
+            "framework": "net6.0",
             "targetAlias": "net6.0",
             "projectReferences": {
-              "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Security\\air.cloud.security.common\\air.cloud.security.common.csproj": {
-                "projectPath": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Security\\air.cloud.security.common\\air.cloud.security.common.csproj"
+              "F:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Security\\air.cloud.security.common\\air.cloud.security.common.csproj": {
+                "projectPath": "F:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Security\\air.cloud.security.common\\air.cloud.security.common.csproj"
               }
             }
           }
@@ -122,10 +125,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net6.0": {
+          "framework": "net6.0",
           "targetAlias": "net6.0",
           "imports": [
             "net461",
@@ -143,18 +147,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200-preview.0.26103.119\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300-preview.0.26177.108\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.repository\\air.cloud.open.repository.csproj": {
+    "F:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.repository\\air.cloud.open.repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.repository\\air.cloud.open.repository.csproj",
+        "projectUniqueName": "F:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.repository\\air.cloud.open.repository.csproj",
         "projectName": "air.cloud.open.repository",
-        "projectPath": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.repository\\air.cloud.open.repository.csproj",
+        "projectPath": "F:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.repository\\air.cloud.open.repository.csproj",
         "packagesPath": "C:\\Users\\23129\\.nuget\\packages\\",
-        "outputPath": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.repository\\obj\\",
+        "outputPath": "F:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Open\\air.cloud.open.repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Microsoft\\Visual Studio Shared\\2022\\Preview\\NuGetPackages"
@@ -174,10 +178,11 @@
         },
         "frameworks": {
           "net6.0": {
+            "framework": "net6.0",
             "targetAlias": "net6.0",
             "projectReferences": {
-              "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Security\\air.cloud.security.common\\air.cloud.security.common.csproj": {
-                "projectPath": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Security\\air.cloud.security.common\\air.cloud.security.common.csproj"
+              "F:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Security\\air.cloud.security.common\\air.cloud.security.common.csproj": {
+                "projectPath": "F:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Security\\air.cloud.security.common\\air.cloud.security.common.csproj"
               }
             }
           }
@@ -192,19 +197,16 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net6.0": {
+          "framework": "net6.0",
           "targetAlias": "net6.0",
           "dependencies": {
-            "Air.Cloud.DataBase": {
+            "Air.Cloud.EntityFrameWork.MySQL": {
               "target": "Package",
-              "version": "[2.0.0-alpha-251223, )"
-            },
-            "Oracle.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[7.21.13, )"
+              "version": "[2.0.0-alpha-20260429, )"
             }
           },
           "imports": [
@@ -223,18 +225,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200-preview.0.26103.119\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300-preview.0.26177.108\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Security\\air.cloud.security.common\\air.cloud.security.common.csproj": {
+    "F:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Security\\air.cloud.security.common\\air.cloud.security.common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Security\\air.cloud.security.common\\air.cloud.security.common.csproj",
+        "projectUniqueName": "F:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Security\\air.cloud.security.common\\air.cloud.security.common.csproj",
         "projectName": "air.cloud.security.common",
-        "projectPath": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Security\\air.cloud.security.common\\air.cloud.security.common.csproj",
+        "projectPath": "F:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Security\\air.cloud.security.common\\air.cloud.security.common.csproj",
         "packagesPath": "C:\\Users\\23129\\.nuget\\packages\\",
-        "outputPath": "G:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Security\\air.cloud.security.common\\obj\\",
+        "outputPath": "F:\\星曳数据\\研究院\\活跃项目\\air.micro.temp\\Services\\Security\\air.cloud.security.common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Microsoft\\Visual Studio Shared\\2022\\Preview\\NuGetPackages"
@@ -254,6 +256,7 @@
         },
         "frameworks": {
           "net6.0": {
+            "framework": "net6.0",
             "targetAlias": "net6.0",
             "projectReferences": {}
           }
@@ -268,39 +271,40 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net6.0": {
+          "framework": "net6.0",
           "targetAlias": "net6.0",
           "dependencies": {
             "Air.Cloud.Core": {
               "target": "Package",
-              "version": "[2.0.0-alpha-260205, )"
+              "version": "[2.0.0-alpha-20260429, )"
             },
             "Air.Cloud.Core.Extensions": {
               "target": "Package",
-              "version": "[2.0.0-alpha-251223, )"
+              "version": "[2.0.0-alpha-20260414, )"
             },
             "Air.Cloud.Modules.RedisCache": {
               "target": "Package",
-              "version": "[2.0.0-alpha-251223, )"
+              "version": "[2.0.0-alpha-20260414, )"
             },
             "Air.Cloud.Modules.SkyMirrorShield": {
               "target": "Package",
-              "version": "[2.0.0-alpha-260131, )"
+              "version": "[2.0.0-alpha-20260414, )"
             },
             "Air.Cloud.Plugins.SpecificationDocument": {
               "target": "Package",
-              "version": "[2.0.0-alpha-251223, )"
+              "version": "[2.0.0-alpha-20260414, )"
             },
             "Air.Cloud.WebApp": {
               "target": "Package",
-              "version": "[2.0.0-alpha-251223, )"
+              "version": "[2.0.0-alpha-20260414, )"
             },
-            "Oracle.EntityFrameworkCore": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.21.13, )"
+              "version": "[7.0.20, )"
             }
           },
           "imports": [
@@ -319,7 +323,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200-preview.0.26103.119\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300-preview.0.26177.108\\RuntimeIdentifierGraph.json"
         }
       }
     }

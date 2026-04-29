@@ -12,10 +12,6 @@
 using air.cloud.security.common.Auths;
 using air.cloud.security.common.Extensions;
 
-using Air.Cloud.DataBase.Contexts;
-using Air.Cloud.DataBase.Contexts.Attributes;
-using Air.Cloud.DataBase.Internal;
-
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 
@@ -24,7 +20,7 @@ namespace air.cloud.system.repository.DbContexts
     /// <summary>
     /// 系统数据库配置
     /// </summary>
-    [AppDbContext("OracleConnectionString", DbProvider.Oracle)]
+    [AppDbContext("SecurityConnectionString")]
     public class DefaultDbContext : AppDbContext<DefaultDbContext>
     {
         private readonly IUserAccountStore userAccountStore;

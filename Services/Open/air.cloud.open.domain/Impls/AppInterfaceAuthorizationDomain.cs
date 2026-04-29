@@ -13,7 +13,7 @@ using Air.Cloud.Core;
 using Air.Cloud.Core.App;
 using Air.Cloud.Core.Extensions;
 using Air.Cloud.Core.Extensions.Linqs;
-using Air.Cloud.DataBase.Repositories;
+using Air.Cloud.EntityFrameWork.Core.Repositories;
 
 namespace air.cloud.open.domain.Impls
 {

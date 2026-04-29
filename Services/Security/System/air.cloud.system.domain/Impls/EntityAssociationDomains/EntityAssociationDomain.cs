@@ -14,8 +14,7 @@ using air.cloud.system.model.Domains.EntityAssociationDomains;
 using air.cloud.system.model.Entitys.Associations;
 
 using Air.Cloud.Core.Extensions;
-using Air.Cloud.DataBase.Entities.Dependencies;
-using Air.Cloud.DataBase.Repositories;
+using Air.Cloud.EntityFrameWork.Core.Repositories;
 
 using Microsoft.EntityFrameworkCore;
 

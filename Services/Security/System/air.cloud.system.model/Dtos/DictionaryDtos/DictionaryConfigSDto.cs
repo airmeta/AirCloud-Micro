@@ -56,8 +56,8 @@ namespace air.cloud.system.model.Dtos.DictionaryDtos
         public string? Description { get; set; }
 
         /// <summary>
-        /// <para>zh-cn:扩展字段（与数据库CLOB对应）</para>
-        /// <para>en-us:Meta info (mapped to CLOB in DB)</para>
+        /// <para>zh-cn:扩展字段（与数据库TEXT对应）</para>
+        /// <para>en-us:Meta info (mapped to TEXT in DB)</para>
         /// </summary>
         public string? Meta { get; set; }
 
@@ -84,7 +84,7 @@ namespace air.cloud.system.model.Dtos.DictionaryDtos
                 throw new ArgumentException("值长度不能超过256; Value length must be <= 256.", nameof(Value));
             if (!string.IsNullOrEmpty(Description) && Description.Length > 512)
                 throw new ArgumentException("描述长度不能超过512; Description length must be <= 512.", nameof(Description));
-            // Meta 为 CLOB，不做长度限制。如需限制，可根据业务约束添加。
+            // Meta 为 TEXT，不做长度限制。如需限制，可根据业务约束添加。
         }
     }
 }

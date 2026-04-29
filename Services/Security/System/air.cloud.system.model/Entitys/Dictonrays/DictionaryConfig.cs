@@ -62,7 +62,7 @@ namespace air.cloud.system.model.Entitys.Dictonrays
         /// <para>zh-cn:扩展字段</para>
         /// <para>en-us:Meta</para>
         /// </summary>
-        [Column("META", TypeName = "CLOB")]
+        [Column("META", TypeName = "TEXT")]
         public string? Meta { get; set; }
     }
 }

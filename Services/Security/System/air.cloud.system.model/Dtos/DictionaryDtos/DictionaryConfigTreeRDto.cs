@@ -54,8 +54,8 @@ namespace air.cloud.system.model.Dtos.DictionaryDtos
         public string? Description { get; set; }
 
         /// <summary>
-        /// <para>zh-cn:扩展字段（与数据库CLOB对应）</para>
-        /// <para>en-us:Meta info (mapped to CLOB in DB)</para>
+        /// <para>zh-cn:扩展字段（与数据库TEXT对应）</para>
+        /// <para>en-us:Meta info (mapped to TEXT in DB)</para>
         /// </summary>
         public string? Meta { get; set; }
 

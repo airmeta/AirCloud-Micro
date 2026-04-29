@@ -24,7 +24,8 @@ using Air.Cloud.Core.App;
 using Air.Cloud.Core.Extensions;
 using Air.Cloud.Core.Extensions.Linqs;
 using Air.Cloud.Core.Standard.SkyMirror.Model;
-using Air.Cloud.DataBase.Repositories;
+using Air.Cloud.Core.Standard.SkyMirror.Model;
+using Air.Cloud.EntityFrameWork.Core.Repositories;
 using Air.Cloud.WebApp.FriendlyException;
 
 using Mapster;

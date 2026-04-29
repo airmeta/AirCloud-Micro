@@ -21,7 +21,6 @@ using air.cloud.system.service.Services.AppServices;
 
 using Air.Cloud.Core;
 using Air.Cloud.Core.Extensions;
-using Air.Cloud.Core.Plugins.Security.SM2;
 using Air.Cloud.Core.Standard.Taxin.Attributes;
 
 using Mapster;

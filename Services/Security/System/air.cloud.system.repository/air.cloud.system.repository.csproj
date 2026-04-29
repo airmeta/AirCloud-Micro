@@ -6,8 +6,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Air.Cloud.DataBase" Version="2.0.0-alpha-251223" />
-		<PackageReference Include="Oracle.EntityFrameworkCore" Version="7.21.13" />
+		<PackageReference Include="Air.Cloud.EntityFrameWork.MySQL" Version="2.0.0-alpha-20260429" />
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\..\air.cloud.security.common\air.cloud.security.common.csproj" />

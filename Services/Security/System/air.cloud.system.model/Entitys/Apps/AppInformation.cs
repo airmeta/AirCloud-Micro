@@ -48,7 +48,7 @@ namespace air.cloud.system.model.Entitys.Apps
         /// <summary>
         /// 图标
         /// </summary>
-        [Column("LOGO", TypeName = "CLOB")]
+        [Column("LOGO", TypeName = "TEXT")]
         public string? Logo { get; set; }
 
         /// <summary>
@@ -66,19 +66,19 @@ namespace air.cloud.system.model.Entitys.Apps
         /// <summary>
         /// 我方的公钥(传给应用,应用做加密)
         /// </summary>
-        [Column("PUBLIC_KEY", TypeName = "CLOB")]
+        [Column("PUBLIC_KEY", TypeName = "TEXT")]
         public string PublicKey { get; set; }
 
         /// <summary>
         /// 我方的私钥(用于对方解密应用传输出去的加密数据)
         /// </summary>
-        [Column("PRIVATE_KEY", TypeName = "CLOB")]
+        [Column("PRIVATE_KEY", TypeName = "TEXT")]
         public string PrivateKey { get; set; }
 
         /// <summary>
         /// 对方私钥(解密对方的数据)
         /// </summary>
-        [Column("APP_PRIVATE_KEY", TypeName = "CLOB")]
+        [Column("APP_PRIVATE_KEY", TypeName = "TEXT")]
         public string? AppPrivateKey { get; set; }
 
         /// <summary>

@@ -18,7 +18,7 @@ using air.cloud.system.model.Entitys.Users;
 
 using Air.Cloud.Core.Extensions;
 using Air.Cloud.Core.Extensions.Linqs;
-using Air.Cloud.DataBase.Repositories;
+using Air.Cloud.EntityFrameWork.Core.Repositories;
 
 using Microsoft.EntityFrameworkCore;
 

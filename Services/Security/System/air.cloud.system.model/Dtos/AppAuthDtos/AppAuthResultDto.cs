@@ -1,4 +1,5 @@
-﻿using Air.Cloud.Core.Standard.SkyMirror.Model;
+﻿
+using Air.Cloud.Core.Standard.SkyMirror.Model;
 
 namespace air.cloud.system.model.Dtos.AppAuthDtos
 {

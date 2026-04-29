@@ -15,7 +15,7 @@
           "air.cloud.open.domain.dll": {}
         }
       },
-      "Air.Cloud.Core/2.0.0-alpha-260205": {
+      "Air.Cloud.Core/2.0.0-alpha-20260429": {
         "dependencies": {
           "AspectInjector": "2.8.2",
           "Mapster": "7.3.0",
@@ -31,9 +31,9 @@
           }
         }
       },
-      "Air.Cloud.Core.Extensions/2.0.0-alpha-251223": {
+      "Air.Cloud.Core.Extensions/2.0.0-alpha-20260414": {
         "dependencies": {
-          "Air.Cloud.Core": "2.0.0-alpha-260205"
+          "Air.Cloud.Core": "2.0.0-alpha-20260429"
         },
         "runtime": {
           "lib/net6.0/Air.Cloud.Core.Extensions.dll": {
@@ -42,24 +42,37 @@
           }
         }
       },
-      "Air.Cloud.DataBase/2.0.0-alpha-251223": {
+      "Air.Cloud.EntityFrameWork.Core/2.0.0-alpha-20260414": {
         "dependencies": {
-          "Air.Cloud.Core": "2.0.0-alpha-260205",
+          "Air.Cloud.Core": "2.0.0-alpha-20260429",
           "Microsoft.EntityFrameworkCore": "7.0.20",
-          "Microsoft.EntityFrameworkCore.Relational": "7.0.20",
-          "UAParser": "3.1.47"
+          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.20",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.20"
         },
         "runtime": {
-          "lib/net6.0/Air.Cloud.DataBase.dll": {
+          "lib/net6.0/Air.Cloud.EntityFrameWork.Core.dll": {
             "assemblyVersion": "2.0.0.0",
             "fileVersion": "2.0.0.0"
           }
         }
       },
-      "Air.Cloud.Modules.RedisCache/2.0.0-alpha-251223": {
+      "Air.Cloud.EntityFrameWork.MySQL/2.0.0-alpha-20260429": {
         "dependencies": {
-          "Air.Cloud.Core": "2.0.0-alpha-260205",
-          "Air.Cloud.Core.Extensions": "2.0.0-alpha-251223",
+          "Air.Cloud.EntityFrameWork.Core": "2.0.0-alpha-20260414",
+          "Microsoft.EntityFrameworkCore": "7.0.20",
+          "Pomelo.EntityFrameworkCore.MySql": "7.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Air.Cloud.EntityFrameWork.MySQL.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "Air.Cloud.Modules.RedisCache/2.0.0-alpha-20260414": {
+        "dependencies": {
+          "Air.Cloud.Core": "2.0.0-alpha-20260429",
+          "Air.Cloud.Core.Extensions": "2.0.0-alpha-20260414",
           "StackExchange.Redis": "2.5.61"
         },
         "runtime": {
@@ -69,10 +82,10 @@
           }
         }
       },
-      "Air.Cloud.Modules.SkyMirrorShield/2.0.0-alpha-260131": {
+      "Air.Cloud.Modules.SkyMirrorShield/2.0.0-alpha-20260414": {
         "dependencies": {
-          "Air.Cloud.Core": "2.0.0-alpha-260205",
-          "Air.Cloud.WebApp": "2.0.0-alpha-251223"
+          "Air.Cloud.Core": "2.0.0-alpha-20260429",
+          "Air.Cloud.WebApp": "2.0.0-alpha-20260414"
         },
         "runtime": {
           "lib/net6.0/Air.Cloud.Modules.SkyMirrorShield.dll": {
@@ -81,10 +94,10 @@
           }
         }
       },
-      "Air.Cloud.Plugins.SpecificationDocument/2.0.0-alpha-251223": {
+      "Air.Cloud.Plugins.SpecificationDocument/2.0.0-alpha-20260414": {
         "dependencies": {
-          "Air.Cloud.Core": "2.0.0-alpha-260205",
-          "Air.Cloud.WebApp": "2.0.0-alpha-251223",
+          "Air.Cloud.Core": "2.0.0-alpha-20260429",
+          "Air.Cloud.WebApp": "2.0.0-alpha-20260414",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
         "runtime": {
@@ -94,9 +107,9 @@
           }
         }
       },
-      "Air.Cloud.WebApp/2.0.0-alpha-251223": {
+      "Air.Cloud.WebApp/2.0.0-alpha-20260414": {
         "dependencies": {
-          "Air.Cloud.Core": "2.0.0-alpha-260205",
+          "Air.Cloud.Core": "2.0.0-alpha-20260429",
           "Ben.Demystifier": "0.4.1",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
         },
@@ -318,19 +331,27 @@
           }
         }
       },
-      "Microsoft.Win32.SystemEvents/6.0.0": {
+      "Microsoft.Win32.SystemEvents/5.0.0": {
         "runtime": {
-          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.21.52210"
+          "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
           }
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+          "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll": {
             "rid": "win",
             "assetType": "runtime",
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.21.52210"
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "MySqlConnector/2.2.5": {
+        "runtime": {
+          "lib/net6.0/MySqlConnector.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.2.5.0"
           }
         }
       },
@@ -353,36 +374,23 @@
           }
         }
       },
-      "Oracle.EntityFrameworkCore/7.21.13": {
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.Relational": "7.0.20",
-          "Oracle.ManagedDataAccess.Core": "3.21.130"
-        },
-        "runtime": {
-          "lib/net6.0/Oracle.EntityFrameworkCore.dll": {
-            "assemblyVersion": "7.0.21.1",
-            "fileVersion": "7.0.21.1"
-          }
-        }
-      },
-      "Oracle.ManagedDataAccess.Core/3.21.130": {
-        "dependencies": {
-          "System.Diagnostics.PerformanceCounter": "6.0.1",
-          "System.DirectoryServices": "6.0.1",
-          "System.DirectoryServices.Protocols": "6.0.2"
-        },
-        "runtime": {
-          "lib/netstandard2.1/Oracle.ManagedDataAccess.dll": {
-            "assemblyVersion": "3.1.21.1",
-            "fileVersion": "3.1.21.1"
-          }
-        }
-      },
       "Pipelines.Sockets.Unofficial/2.2.2": {
         "runtime": {
           "lib/net5.0/Pipelines.Sockets.Unofficial.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "2.2.2.34088"
+          }
+        }
+      },
+      "Pomelo.EntityFrameworkCore.MySql/7.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.20",
+          "MySqlConnector": "2.2.5"
+        },
+        "runtime": {
+          "lib/net6.0/Pomelo.EntityFrameworkCore.MySql.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.0.0"
           }
         }
       },
@@ -397,7 +405,7 @@
       "StackExchange.Redis/2.5.61": {
         "dependencies": {
           "Pipelines.Sockets.Unofficial": "2.2.2",
-          "System.Diagnostics.PerformanceCounter": "6.0.1"
+          "System.Diagnostics.PerformanceCounter": "5.0.0"
         },
         "runtime": {
           "lib/net5.0/StackExchange.Redis.dll": {
@@ -443,133 +451,86 @@
           }
         }
       },
-      "System.Configuration.ConfigurationManager/6.0.0": {
+      "System.Configuration.ConfigurationManager/5.0.0": {
         "dependencies": {
-          "System.Security.Cryptography.ProtectedData": "6.0.0",
-          "System.Security.Permissions": "6.0.0"
+          "System.Security.Cryptography.ProtectedData": "5.0.0",
+          "System.Security.Permissions": "5.0.0"
         },
         "runtime": {
-          "lib/net6.0/System.Configuration.ConfigurationManager.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.21.52210"
+          "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
           }
         }
       },
-      "System.Diagnostics.PerformanceCounter/6.0.1": {
+      "System.Diagnostics.PerformanceCounter/5.0.0": {
         "dependencies": {
-          "System.Configuration.ConfigurationManager": "6.0.0"
+          "System.Configuration.ConfigurationManager": "5.0.0"
         },
         "runtime": {
-          "lib/net6.0/System.Diagnostics.PerformanceCounter.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.422.16404"
+          "lib/netstandard2.0/System.Diagnostics.PerformanceCounter.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
           }
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net6.0/System.Diagnostics.PerformanceCounter.dll": {
+          "runtimes/win/lib/netcoreapp2.0/System.Diagnostics.PerformanceCounter.dll": {
             "rid": "win",
             "assetType": "runtime",
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.422.16404"
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
           }
         }
       },
-      "System.DirectoryServices/6.0.1": {
+      "System.Drawing.Common/5.0.0": {
         "dependencies": {
-          "System.Security.Permissions": "6.0.0"
+          "Microsoft.Win32.SystemEvents": "5.0.0"
         },
         "runtime": {
-          "lib/net6.0/System.DirectoryServices.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "6.0.1423.7309"
+          "lib/netcoreapp3.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
           }
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net6.0/System.DirectoryServices.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "6.0.1423.7309"
-          }
-        }
-      },
-      "System.DirectoryServices.Protocols/6.0.2": {
-        "runtime": {
-          "lib/net6.0/System.DirectoryServices.Protocols.dll": {
-            "assemblyVersion": "6.0.0.2",
-            "fileVersion": "6.0.1823.26907"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/linux/lib/net6.0/System.DirectoryServices.Protocols.dll": {
-            "rid": "linux",
-            "assetType": "runtime",
-            "assemblyVersion": "6.0.0.2",
-            "fileVersion": "6.0.1823.26907"
-          },
-          "runtimes/osx/lib/net6.0/System.DirectoryServices.Protocols.dll": {
-            "rid": "osx",
-            "assetType": "runtime",
-            "assemblyVersion": "6.0.0.2",
-            "fileVersion": "6.0.1823.26907"
-          },
-          "runtimes/win/lib/net6.0/System.DirectoryServices.Protocols.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "6.0.0.2",
-            "fileVersion": "6.0.1823.26907"
-          }
-        }
-      },
-      "System.Drawing.Common/6.0.0": {
-        "dependencies": {
-          "Microsoft.Win32.SystemEvents": "6.0.0"
-        },
-        "runtime": {
-          "lib/net6.0/System.Drawing.Common.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.21.52210"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/unix/lib/net6.0/System.Drawing.Common.dll": {
+          "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll": {
             "rid": "unix",
             "assetType": "runtime",
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.21.52210"
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
           },
-          "runtimes/win/lib/net6.0/System.Drawing.Common.dll": {
+          "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll": {
             "rid": "win",
             "assetType": "runtime",
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.21.52210"
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
           }
         }
       },
-      "System.Security.Cryptography.ProtectedData/6.0.0": {
+      "System.Security.Cryptography.ProtectedData/5.0.0": {
         "runtime": {
-          "lib/net6.0/System.Security.Cryptography.ProtectedData.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.21.52210"
+          "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
           }
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net6.0/System.Security.Cryptography.ProtectedData.dll": {
+          "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
             "rid": "win",
             "assetType": "runtime",
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.21.52210"
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
           }
         }
       },
-      "System.Security.Permissions/6.0.0": {
+      "System.Security.Permissions/5.0.0": {
         "dependencies": {
-          "System.Windows.Extensions": "6.0.0"
+          "System.Windows.Extensions": "5.0.0"
         },
         "runtime": {
-          "lib/net6.0/System.Security.Permissions.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.21.52210"
+          "lib/net5.0/System.Security.Permissions.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
           }
         }
       },
@@ -600,30 +561,22 @@
           }
         }
       },
-      "System.Windows.Extensions/6.0.0": {
+      "System.Windows.Extensions/5.0.0": {
         "dependencies": {
-          "System.Drawing.Common": "6.0.0"
+          "System.Drawing.Common": "5.0.0"
         },
         "runtime": {
-          "lib/net6.0/System.Windows.Extensions.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.21.52210"
+          "lib/netcoreapp3.0/System.Windows.Extensions.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
           }
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net6.0/System.Windows.Extensions.dll": {
+          "runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll": {
             "rid": "win",
             "assetType": "runtime",
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.21.52210"
-          }
-        }
-      },
-      "UAParser/3.1.47": {
-        "runtime": {
-          "lib/netcoreapp2.0/UAParser.dll": {
-            "assemblyVersion": "3.1.47.0",
-            "fileVersion": "3.1.47.0"
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
           }
         }
       },
@@ -651,8 +604,7 @@
       },
       "air.cloud.open.repository/1.0.0": {
         "dependencies": {
-          "Air.Cloud.DataBase": "2.0.0-alpha-251223",
-          "Oracle.EntityFrameworkCore": "7.21.13",
+          "Air.Cloud.EntityFrameWork.MySQL": "2.0.0-alpha-20260429",
           "air.cloud.security.common": "1.0.0"
         },
         "runtime": {
@@ -664,13 +616,13 @@
       },
       "air.cloud.security.common/1.0.0": {
         "dependencies": {
-          "Air.Cloud.Core": "2.0.0-alpha-260205",
-          "Air.Cloud.Core.Extensions": "2.0.0-alpha-251223",
-          "Air.Cloud.Modules.RedisCache": "2.0.0-alpha-251223",
-          "Air.Cloud.Modules.SkyMirrorShield": "2.0.0-alpha-260131",
-          "Air.Cloud.Plugins.SpecificationDocument": "2.0.0-alpha-251223",
-          "Air.Cloud.WebApp": "2.0.0-alpha-251223",
-          "Oracle.EntityFrameworkCore": "7.21.13"
+          "Air.Cloud.Core": "2.0.0-alpha-20260429",
+          "Air.Cloud.Core.Extensions": "2.0.0-alpha-20260414",
+          "Air.Cloud.Modules.RedisCache": "2.0.0-alpha-20260414",
+          "Air.Cloud.Modules.SkyMirrorShield": "2.0.0-alpha-20260414",
+          "Air.Cloud.Plugins.SpecificationDocument": "2.0.0-alpha-20260414",
+          "Air.Cloud.WebApp": "2.0.0-alpha-20260414",
+          "Microsoft.EntityFrameworkCore": "7.0.20"
         },
         "runtime": {
           "air.cloud.security.common.dll": {
@@ -687,54 +639,61 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Air.Cloud.Core/2.0.0-alpha-260205": {
+    "Air.Cloud.Core/2.0.0-alpha-20260429": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-k0aJHWp63n1W4JRGkVRVr8hc7hqDB9yimqugYNXI7mgjH30+taJafLfbBp3MPAhKgJCyb8Enj/WJNDdGpCe60A==",
-      "path": "air.cloud.core/2.0.0-alpha-260205",
-      "hashPath": "air.cloud.core.2.0.0-alpha-260205.nupkg.sha512"
+      "sha512": "sha512-nkQZkS/npFlBHZyCCRLcntgpvBtSy3e4g6Cah32J440XhJduFleVOKnf7tNCtkslTyLWxh7TODhVCaqh40p4yg==",
+      "path": "air.cloud.core/2.0.0-alpha-20260429",
+      "hashPath": "air.cloud.core.2.0.0-alpha-20260429.nupkg.sha512"
     },
-    "Air.Cloud.Core.Extensions/2.0.0-alpha-251223": {
+    "Air.Cloud.Core.Extensions/2.0.0-alpha-20260414": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-HWijJOC/vxve7HD4yp+ZMmyJHqHekYEuRRsj8IA4s3WwDR6I+1PiX5BjR2GMgUAclnAheCDe7Donq7RE4aqGBQ==",
-      "path": "air.cloud.core.extensions/2.0.0-alpha-251223",
-      "hashPath": "air.cloud.core.extensions.2.0.0-alpha-251223.nupkg.sha512"
+      "sha512": "sha512-N8ZY4ADibcl40sFHS0EgCpKg/XrRfi0wcmZMD6oU8e3kFTRNhY0cyDdmyM6k6PeBdI/4MjNhfjJxQ3GBsaiRiA==",
+      "path": "air.cloud.core.extensions/2.0.0-alpha-20260414",
+      "hashPath": "air.cloud.core.extensions.2.0.0-alpha-20260414.nupkg.sha512"
     },
-    "Air.Cloud.DataBase/2.0.0-alpha-251223": {
+    "Air.Cloud.EntityFrameWork.Core/2.0.0-alpha-20260414": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-0XG375Wts3X8Vp6DZIc/N3/ti+ERQQWZsDlWa1ftmMSCxN82FNXEcTUxKawOFxc5hniZVPVfSl0NcoCl/4KeKQ==",
-      "path": "air.cloud.database/2.0.0-alpha-251223",
-      "hashPath": "air.cloud.database.2.0.0-alpha-251223.nupkg.sha512"
+      "sha512": "sha512-PjARINTj6r49BtgW0kxtz+3O3hFrbLwpDS/TG7HRDeRVcK3dtwfDFhFJLQAbwXA13RlMvTXARTKE8DViZfH5ZA==",
+      "path": "air.cloud.entityframework.core/2.0.0-alpha-20260414",
+      "hashPath": "air.cloud.entityframework.core.2.0.0-alpha-20260414.nupkg.sha512"
     },
-    "Air.Cloud.Modules.RedisCache/2.0.0-alpha-251223": {
+    "Air.Cloud.EntityFrameWork.MySQL/2.0.0-alpha-20260429": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-KUNvcFoWcQsfBVurmmwgzjJxn7JhRJ/4nPitzPrqQmTSXIuLcXRrkXxnYaNdFoZ6zal5bUiw4d2WUIdqRQwKMg==",
-      "path": "air.cloud.modules.rediscache/2.0.0-alpha-251223",
-      "hashPath": "air.cloud.modules.rediscache.2.0.0-alpha-251223.nupkg.sha512"
+      "sha512": "sha512-Sm3106iIKIj+kgSIZuwWjEu78M5MVqbzGpzCMj8q5LyPE/UfyYlloywaiPbJTvKTtucYihLCvR4mUH8jvs/gSw==",
+      "path": "air.cloud.entityframework.mysql/2.0.0-alpha-20260429",
+      "hashPath": "air.cloud.entityframework.mysql.2.0.0-alpha-20260429.nupkg.sha512"
     },
-    "Air.Cloud.Modules.SkyMirrorShield/2.0.0-alpha-260131": {
+    "Air.Cloud.Modules.RedisCache/2.0.0-alpha-20260414": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-kZT1pc6hgL2t6zjWFu+uTqTMgpCG0wF64CbNee/USoHbniW98AeBm2ybfkG9KiMY1YQ+MGjvgv2D10LMiaUCDQ==",
-      "path": "air.cloud.modules.skymirrorshield/2.0.0-alpha-260131",
-      "hashPath": "air.cloud.modules.skymirrorshield.2.0.0-alpha-260131.nupkg.sha512"
+      "sha512": "sha512-s8a9FUcncTjhlfCSjEx5gTJ3l3AoytAi0ETQThROeQil5cYgUWTU8zGXDTxS/vL8litAjfgAckmy/Sj5xu446A==",
+      "path": "air.cloud.modules.rediscache/2.0.0-alpha-20260414",
+      "hashPath": "air.cloud.modules.rediscache.2.0.0-alpha-20260414.nupkg.sha512"
     },
-    "Air.Cloud.Plugins.SpecificationDocument/2.0.0-alpha-251223": {
+    "Air.Cloud.Modules.SkyMirrorShield/2.0.0-alpha-20260414": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-vcZv4onjV67wPXUSwkf0FFiFXxeCeG6hJTi5b1DBbaNhAQxhEuPWpzsSEUltkCoVhTL6mNOaEsNNlPYUSmav8Q==",
-      "path": "air.cloud.plugins.specificationdocument/2.0.0-alpha-251223",
-      "hashPath": "air.cloud.plugins.specificationdocument.2.0.0-alpha-251223.nupkg.sha512"
+      "sha512": "sha512-ovQcaaR90vfJvcbP4dAVhsS2D+bNrU4rtE89sEgxsUywHC4oKrcjlxNAKn7s94paTK4nDGQOqB2N5i0tIag1LQ==",
+      "path": "air.cloud.modules.skymirrorshield/2.0.0-alpha-20260414",
+      "hashPath": "air.cloud.modules.skymirrorshield.2.0.0-alpha-20260414.nupkg.sha512"
     },
-    "Air.Cloud.WebApp/2.0.0-alpha-251223": {
+    "Air.Cloud.Plugins.SpecificationDocument/2.0.0-alpha-20260414": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-a/Vzj9NcmV0NVwuI1uZLCXnoZtct+CtAM/66qO1UCxKcYeql5Vpbp/G1GJt4svZJukboXGjwqYkMhc8plHf/Ng==",
-      "path": "air.cloud.webapp/2.0.0-alpha-251223",
-      "hashPath": "air.cloud.webapp.2.0.0-alpha-251223.nupkg.sha512"
+      "sha512": "sha512-gKQvVrtXN2IOC1m2ZDKbCuPio5JoZ/j6yJmpfF1ezth9QPQoHhSlxD26zBoEbKQjBPEYdT3PRpZwHB5ANttuoA==",
+      "path": "air.cloud.plugins.specificationdocument/2.0.0-alpha-20260414",
+      "hashPath": "air.cloud.plugins.specificationdocument.2.0.0-alpha-20260414.nupkg.sha512"
+    },
+    "Air.Cloud.WebApp/2.0.0-alpha-20260414": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7kUNn7/RzRmZoWaHhJhmDulsCLkBP/EqGLUrwSV7GdlH8MPRxBXYXG94amnEd9hDMs2PfLfVThOwGw28DC4EfQ==",
+      "path": "air.cloud.webapp/2.0.0-alpha-20260414",
+      "hashPath": "air.cloud.webapp.2.0.0-alpha-20260414.nupkg.sha512"
     },
     "AspectInjector/2.8.2": {
       "type": "package",
@@ -876,12 +835,19 @@
       "path": "microsoft.openapi/1.2.3",
       "hashPath": "microsoft.openapi.1.2.3.nupkg.sha512"
     },
-    "Microsoft.Win32.SystemEvents/6.0.0": {
+    "Microsoft.Win32.SystemEvents/5.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-hqTM5628jSsQiv+HGpiq3WKBl2c8v1KZfby2J6Pr7pEPlK9waPdgEO6b8A/+/xn/yZ9ulv8HuqK71ONy2tg67A==",
-      "path": "microsoft.win32.systemevents/6.0.0",
-      "hashPath": "microsoft.win32.systemevents.6.0.0.nupkg.sha512"
+      "sha512": "sha512-Bh6blKG8VAKvXiLe2L+sEsn62nc1Ij34MrNxepD2OCrS5cpCwQa9MeLyhVQPQ/R4Wlzwuy6wMK8hLb11QPDRsQ==",
+      "path": "microsoft.win32.systemevents/5.0.0",
+      "hashPath": "microsoft.win32.systemevents.5.0.0.nupkg.sha512"
+    },
+    "MySqlConnector/2.2.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6sinY78RvryhHwpup3awdjYO7d5hhWahb5p/1VDODJhSxJggV/sBbYuKK5IQF9TuzXABiddqUbmRfM884tqA3Q==",
+      "path": "mysqlconnector/2.2.5",
+      "hashPath": "mysqlconnector.2.2.5.nupkg.sha512"
     },
     "Newtonsoft.Json/13.0.3": {
       "type": "package",
@@ -897,26 +863,19 @@
       "path": "newtonsoft.json.bson/1.0.2",
       "hashPath": "newtonsoft.json.bson.1.0.2.nupkg.sha512"
     },
-    "Oracle.EntityFrameworkCore/7.21.13": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-i1v/oWjuBtRAxmjqB41a3aanQNeSjFnRPoVp3NfK/UlzkU0QP2eSOaHTNqjDvkdGERW4ZKOgsaFHZJ9QdqJyWQ==",
-      "path": "oracle.entityframeworkcore/7.21.13",
-      "hashPath": "oracle.entityframeworkcore.7.21.13.nupkg.sha512"
-    },
-    "Oracle.ManagedDataAccess.Core/3.21.130": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-bXNwPyAaDivO84HEYiegK7r/LleSEfA0nc70bE88wkqd1E0Q1+r/SUbJ51xOK2vk6iHbTSMuhnC79BU8svPBjQ==",
-      "path": "oracle.manageddataaccess.core/3.21.130",
-      "hashPath": "oracle.manageddataaccess.core.3.21.130.nupkg.sha512"
-    },
     "Pipelines.Sockets.Unofficial/2.2.2": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-Bhk0FWxH1paI+18zr1g5cTL+ebeuDcBCR+rRFO+fKEhretgjs7MF2Mc1P64FGLecWp4zKCUOPzngBNrqVyY7Zg==",
       "path": "pipelines.sockets.unofficial/2.2.2",
       "hashPath": "pipelines.sockets.unofficial.2.2.2.nupkg.sha512"
+    },
+    "Pomelo.EntityFrameworkCore.MySql/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Qk5WB/skSZet5Yrz6AN2ywjZaB1pxfAmvQ+5I4khTkLwwIamI4QJoH2NphCWLFQL+2ar8HvsNCTmwYk0qhqL0w==",
+      "path": "pomelo.entityframeworkcore.mysql/7.0.0",
+      "hashPath": "pomelo.entityframeworkcore.mysql.7.0.0.nupkg.sha512"
     },
     "Portable.BouncyCastle/1.8.8": {
       "type": "package",
@@ -960,54 +919,40 @@
       "path": "swashbuckle.aspnetcore.swaggerui/6.4.0",
       "hashPath": "swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
     },
-    "System.Configuration.ConfigurationManager/6.0.0": {
+    "System.Configuration.ConfigurationManager/5.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-7T+m0kDSlIPTHIkPMIu6m6tV6qsMqJpvQWW2jIc2qi7sn40qxFo0q+7mEQAhMPXZHMKnWrnv47ntGlM/ejvw3g==",
-      "path": "system.configuration.configurationmanager/6.0.0",
-      "hashPath": "system.configuration.configurationmanager.6.0.0.nupkg.sha512"
+      "sha512": "sha512-aM7cbfEfVNlEEOj3DsZP+2g9NRwbkyiAv2isQEzw7pnkDg9ekCU2m1cdJLM02Uq691OaCS91tooaxcEn8d0q5w==",
+      "path": "system.configuration.configurationmanager/5.0.0",
+      "hashPath": "system.configuration.configurationmanager.5.0.0.nupkg.sha512"
     },
-    "System.Diagnostics.PerformanceCounter/6.0.1": {
+    "System.Diagnostics.PerformanceCounter/5.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-dDl7Gx3bmSrM2k2ZIm+ucEJnLloZRyvfQF1DvfvATcGF3jtaUBiPvChma+6ZcZzxWMirN3kCywkW7PILphXyMQ==",
-      "path": "system.diagnostics.performancecounter/6.0.1",
-      "hashPath": "system.diagnostics.performancecounter.6.0.1.nupkg.sha512"
+      "sha512": "sha512-kcQWWtGVC3MWMNXdMDWfrmIlFZZ2OdoeT6pSNVRtk9+Sa7jwdPiMlNwb0ZQcS7NRlT92pCfmjRtkSWUW3RAKwg==",
+      "path": "system.diagnostics.performancecounter/5.0.0",
+      "hashPath": "system.diagnostics.performancecounter.5.0.0.nupkg.sha512"
     },
-    "System.DirectoryServices/6.0.1": {
+    "System.Drawing.Common/5.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-935IbO7h5FDGYxeO3cbx/CuvBBuk/VI8sENlfmXlh1pupNOB3LAGzdYdPY8CawGJFP7KNrHK5eUlsFoz3F6cuA==",
-      "path": "system.directoryservices/6.0.1",
-      "hashPath": "system.directoryservices.6.0.1.nupkg.sha512"
+      "sha512": "sha512-SztFwAnpfKC8+sEKXAFxCBWhKQaEd97EiOL7oZJZP56zbqnLpmxACWA8aGseaUExciuEAUuR9dY8f7HkTRAdnw==",
+      "path": "system.drawing.common/5.0.0",
+      "hashPath": "system.drawing.common.5.0.0.nupkg.sha512"
     },
-    "System.DirectoryServices.Protocols/6.0.2": {
+    "System.Security.Cryptography.ProtectedData/5.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-vDDPWwHn3/DNZ+kPkdXHoada+tKPEC9bVqDOr4hK6HBSP7hGCUTA0Zw6WU5qpGaqa5M1/V+axHMIv+DNEbIf6g==",
-      "path": "system.directoryservices.protocols/6.0.2",
-      "hashPath": "system.directoryservices.protocols.6.0.2.nupkg.sha512"
+      "sha512": "sha512-HGxMSAFAPLNoxBvSfW08vHde0F9uh7BjASwu6JF9JnXuEPhCY3YUqURn0+bQV/4UWeaqymmrHWV+Aw9riQCtCA==",
+      "path": "system.security.cryptography.protecteddata/5.0.0",
+      "hashPath": "system.security.cryptography.protecteddata.5.0.0.nupkg.sha512"
     },
-    "System.Drawing.Common/6.0.0": {
+    "System.Security.Permissions/5.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-NfuoKUiP2nUWwKZN6twGqXioIe1zVD0RIj2t976A+czLHr2nY454RwwXs6JU9Htc6mwqL6Dn/nEL3dpVf2jOhg==",
-      "path": "system.drawing.common/6.0.0",
-      "hashPath": "system.drawing.common.6.0.0.nupkg.sha512"
-    },
-    "System.Security.Cryptography.ProtectedData/6.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-rp1gMNEZpvx9vP0JW0oHLxlf8oSiQgtno77Y4PLUBjSiDYoD77Y8uXHr1Ea5XG4/pIKhqAdxZ8v8OTUtqo9PeQ==",
-      "path": "system.security.cryptography.protecteddata/6.0.0",
-      "hashPath": "system.security.cryptography.protecteddata.6.0.0.nupkg.sha512"
-    },
-    "System.Security.Permissions/6.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-T/uuc7AklkDoxmcJ7LGkyX1CcSviZuLCa4jg3PekfJ7SU0niF0IVTXwUiNVP9DSpzou2PpxJ+eNY2IfDM90ZCg==",
-      "path": "system.security.permissions/6.0.0",
-      "hashPath": "system.security.permissions.6.0.0.nupkg.sha512"
+      "sha512": "sha512-uE8juAhEkp7KDBCdjDIE3H9R1HJuEHqeqX8nLX9gmYKWwsqk3T5qZlPx8qle5DPKimC/Fy3AFTdV7HamgCh9qQ==",
+      "path": "system.security.permissions/5.0.0",
+      "hashPath": "system.security.permissions.5.0.0.nupkg.sha512"
     },
     "System.Text.Encodings.Web/8.0.0": {
       "type": "package",
@@ -1023,19 +968,12 @@
       "path": "system.text.json/8.0.0",
       "hashPath": "system.text.json.8.0.0.nupkg.sha512"
     },
-    "System.Windows.Extensions/6.0.0": {
+    "System.Windows.Extensions/5.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
-      "path": "system.windows.extensions/6.0.0",
-      "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
-    },
-    "UAParser/3.1.47": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-I68Jl/Vs5RQZdz9BbmYtnXgujg0jVd61LhKbyNZOCm9lBxZFGxLbiQo6yFj21VYi7DzPvEvrVOmeC6v41AoLfw==",
-      "path": "uaparser/3.1.47",
-      "hashPath": "uaparser.3.1.47.nupkg.sha512"
+      "sha512": "sha512-c1ho9WU9ZxMZawML+ssPKZfdnrg/OjR3pe0m9v8230z3acqphwvPJqzAkH54xRYm5ntZHGG1EPP3sux9H3qSPg==",
+      "path": "system.windows.extensions/5.0.0",
+      "hashPath": "system.windows.extensions.5.0.0.nupkg.sha512"
     },
     "XC.RSAUtil/1.3.6": {
       "type": "package",

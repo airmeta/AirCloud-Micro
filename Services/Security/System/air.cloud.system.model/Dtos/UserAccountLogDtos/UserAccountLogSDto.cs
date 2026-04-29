@@ -38,8 +38,8 @@ namespace air.cloud.system.model.Dtos.UserAccountLogDtos
         public string TypeCode { get; set; }
 
         /// <summary>
-        /// <para>zh-cn:扩展字段（与数据库CLOB对应）</para>
-        /// <para>en-us:Meta info (mapped to CLOB in DB)</para>
+        /// <para>zh-cn:扩展字段（与数据库TEXT对应）</para>
+        /// <para>en-us:Meta info (mapped to TEXT in DB)</para>
         /// </summary>
         public string? Meta { get; set; }
 
@@ -68,7 +68,7 @@ namespace air.cloud.system.model.Dtos.UserAccountLogDtos
                 throw new ArgumentException("类型编码长度不能超过64; TypeCode length must be <= 64.", nameof(TypeCode));
             if (!string.IsNullOrEmpty(Remark) && Remark.Length > 512)
                 throw new ArgumentException("备注长度不能超过512; Remark length must be <= 512.", nameof(Remark));
-            // Meta 为 CLOB，不做长度限制。如需限制，可根据业务约束添加。
+            // Meta 为 TEXT，不做长度限制。如需限制，可根据业务约束添加。
         }
     }
 }

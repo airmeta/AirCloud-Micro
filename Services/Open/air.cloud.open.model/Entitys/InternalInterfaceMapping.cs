@@ -33,14 +33,14 @@ namespace air.cloud.open.model.Entitys
         /// <para>zh-cn:接口参数</para>
         /// <para>en-us:Interface Parameters</para>
         /// </summary>
-        [Column("REQUEST_PARAMETER",TypeName ="CLOB")]
+        [Column("REQUEST_PARAMETER",TypeName ="TEXT")]
         public string RequestParameters { get; set; }
 
         /// <summary>
         /// <para>zh-cn:接口响应参数</para>
         /// <para>en-us:Interface Response Parameters</para>
         /// </summary>
-        [Column("RESPONSE_PARAMETER",TypeName ="CLOB")]
+        [Column("RESPONSE_PARAMETER",TypeName ="TEXT")]
         public string ResponseParameters { get; set; }
 
 

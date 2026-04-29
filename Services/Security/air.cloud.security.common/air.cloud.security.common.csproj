@@ -10,12 +10,12 @@
     <Folder Include="Auths\UserAccounts\" />
   </ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Air.Cloud.Core" Version="2.0.0-alpha-260205" />
-		<PackageReference Include="Air.Cloud.Core.Extensions" Version="2.0.0-alpha-251223" />
-		<PackageReference Include="Air.Cloud.Modules.RedisCache" Version="2.0.0-alpha-251223" />
-		<PackageReference Include="Air.Cloud.Modules.SkyMirrorShield" Version="2.0.0-alpha-260131" /> 
-		<PackageReference Include="Air.Cloud.Plugins.SpecificationDocument" Version="2.0.0-alpha-251223" />
-		<PackageReference Include="Oracle.EntityFrameworkCore" Version="7.21.13" />
-		<PackageReference Include="Air.Cloud.WebApp" Version="2.0.0-alpha-251223" />
+		<PackageReference Include="Air.Cloud.Core" Version="2.0.0-alpha-20260429" />
+		<PackageReference Include="Air.Cloud.Core.Extensions" Version="2.0.0-alpha-20260414" />
+		<PackageReference Include="Air.Cloud.Modules.RedisCache" Version="2.0.0-alpha-20260414" />
+		<PackageReference Include="Air.Cloud.Modules.SkyMirrorShield" Version="2.0.0-alpha-20260414" /> 
+		<PackageReference Include="Air.Cloud.Plugins.SpecificationDocument" Version="2.0.0-alpha-20260414" />
+		<PackageReference Include="Air.Cloud.WebApp" Version="2.0.0-alpha-20260414" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.20" />
 	</ItemGroup>
 </Project>

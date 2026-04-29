@@ -12,7 +12,7 @@
 using air.cloud.security.common.Auths;
 
 using Air.Cloud.Core.App.Startups;
-using Air.Cloud.DataBase.Filters;
+using Air.Cloud.EntityFrameWork.Core.Filters;
 using Air.Cloud.Modules.Taxin.Client;
 using Air.Cloud.Modules.Taxin.Extensions;
 using Air.Cloud.Modules.Taxin.Store;
@@ -28,7 +28,7 @@ namespace air.cloud.account.entry
     { 
         public override void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseSwaggerDocumentPlugin();
+            //app.UseSwaggerDocumentPlugin();
         }
 
         public override void ConfigureServices(IServiceCollection services)

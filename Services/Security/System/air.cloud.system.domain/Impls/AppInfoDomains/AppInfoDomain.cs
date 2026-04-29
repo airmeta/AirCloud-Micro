@@ -22,16 +22,14 @@ using air.cloud.system.model.Dtos.AccountDtos;
 using air.cloud.system.model.Dtos.AppInfoDtos;
 using air.cloud.system.model.Entitys.Apps;
 
-using Air.Cloud.Core;
 using Air.Cloud.Core.App;
 using Air.Cloud.Core.Extensions;
 using Air.Cloud.Core.Extensions.Linqs;
 using Air.Cloud.Core.Plugins.Security.RSA;
 using Air.Cloud.Core.Plugins.Security.SM2;
 using Air.Cloud.Core.Standard.SkyMirror;
-using Air.Cloud.Core.Standard.SkyMirror.Model;
-using Air.Cloud.DataBase.Extensions;
-using Air.Cloud.DataBase.Repositories;
+using Air.Cloud.EntityFrameWork.Core.Extensions;
+using Air.Cloud.EntityFrameWork.Core.Repositories;
 using Air.Cloud.WebApp.FriendlyException;
 
 using Mapster;
@@ -182,12 +180,13 @@ namespace air.cloud.system.domain.Impls.AppInfoDomains
         }
         public async Task<bool> HasAppAsync(string AppId = null)
         {
-            string SQL = "SELECT COUNT(1) FROM USER_TABLES WHERE TABLE_NAME = 'SYS_APP'";
-            string? Total = (await repository.Database.ExecuteScalarAsync(SQL))?.ToString();
-            if (Total.IsNullOrEmpty() || Total.ToInt() == 0)
-            {
-                repository.Database.EnsureCreated();
-            }
+            //原ORACLE的逻辑
+            //string SQL = "SELECT COUNT(1) FROM USER_TABLES WHERE TABLE_NAME = 'SYS_APP'";
+            //string? Total = (await repository.Database.ExecuteScalarAsync(SQL))?.ToString();
+            //if (Total.IsNullOrEmpty() || Total.ToInt() == 0)
+            //{
+            //    repository.Database.EnsureCreated();
+            //}
             if (AppId.IsNullOrEmpty())
             {
                 return await repository.DetachedEntities.AnyAsync();

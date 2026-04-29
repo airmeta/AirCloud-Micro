@@ -1,5 +1,5 @@
-/*
- * Copyright (c) 2024-2030 ĞÇÒ·Êı¾İ
+ï»¿/*
+ * Copyright (c) 2024-2030 æ˜Ÿæ›³æ•°æ®
  *
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -31,11 +31,11 @@ using System.ComponentModel;
 namespace air.cloud.account.service.Impls.AccountServices.AccountServices
 {
     /// <summary>
-    /// <para>zh-cn:ÕË»§·şÎñ</para>
+    /// <para>zh-cn:è´¦æˆ·æœåŠ¡</para>
     /// <para>en-us:Account Service</para>
     /// </summary>
     [Route("v1/security/account")]
-    [Description("ÕË»§¹ÜÀí")]
+    [Description("è´¦æˆ·ç®¡ç†")]
     public class AccountService : IAccountService
     {
         private readonly IAppInfoDomain appInfoDomain;
@@ -51,90 +51,90 @@ namespace air.cloud.account.service.Impls.AccountServices.AccountServices
         }
 
         /// <summary>
-        /// <para>zh-cn:ĞŞ¸ÄÃÜÂë</para>
+        /// <para>zh-cn:ä¿®æ”¹å¯†ç </para>
         /// <para>en-us:Change password</para>
         /// </summary>
         /// <param name="dto">
-        ///  <para>zh-cn:ÕË»§Êı¾İ´«Êä¶ÔÏó£¨°üº¬¼ÓÃÜ¸ºÔØ£©</para>
+        ///  <para>zh-cn:è´¦æˆ·æ•°æ®ä¼ è¾“å¯¹è±¡ï¼ˆåŒ…å«åŠ å¯†è´Ÿè½½ï¼‰</para>
         ///  <para>en-us:Account DTO (contains encrypted payload)</para>
         /// </param>
         /// <returns>
-        ///  <para>zh-cn:·µ»ØĞŞ¸Ä½á¹û£¬true±íÊ¾³É¹¦£¬false±íÊ¾Ê§°Ü</para>
+        ///  <para>zh-cn:è¿”å›ä¿®æ”¹ç»“æœï¼Œtrueè¡¨ç¤ºæˆåŠŸï¼Œfalseè¡¨ç¤ºå¤±è´¥</para>
         ///  <para>en-us:Returns change result, true indicates success, false indicates failure</para>
         /// </returns>
         [HttpPost("password/change")]
         public async Task<bool> ChangePasswordAsync(AccountDto dto)
         {
             if (dto == null || dto.Content.IsNullOrEmpty())
-                throw Oops.Oh("ÇëÇóÊı¾İ²»ÄÜÎª¿Õ");
+                throw Oops.Oh("è¯·æ±‚æ•°æ®ä¸èƒ½ä¸ºç©º");
 
             string AppId = _httpContextAccessor.HttpContext.Request.Headers["AppId"];
 
-            if (AppId.IsNullOrEmpty()) throw Oops.Oh("¿Í»§¶Ë·Ç·¨ÇëÇó");
+            if (AppId.IsNullOrEmpty()) throw Oops.Oh("å®¢æˆ·ç«¯éæ³•è¯·æ±‚");
 
             var App = await appInfoDomain.GetAppInfoAsync(AppId);
-            if (App == null) throw Oops.Oh("¿Í»§¶ËÓ¦ÓÃ²»´æÔÚ»òÒÑ±»½ûÓÃ");
+            if (App == null) throw Oops.Oh("å®¢æˆ·ç«¯åº”ç”¨ä¸å­˜åœ¨æˆ–å·²è¢«ç¦ç”¨");
 
             string Ticket = _httpContextAccessor.HttpContext.Request.Headers["Ticket"];
-            if (Ticket.IsNullOrEmpty()) throw Oops.Oh("¿Í»§¶Ë·Ç·¨ÇëÇó");
+            if (Ticket.IsNullOrEmpty()) throw Oops.Oh("å®¢æˆ·ç«¯éæ³•è¯·æ±‚");
 
             string PayLoadContent = App.Decrypt(dto.Content);
-            if (string.IsNullOrEmpty(PayLoadContent)) throw Oops.Oh("ÇëÇóÊı¾İ½âÎöÊ§°Ü");
+            if (string.IsNullOrEmpty(PayLoadContent)) throw Oops.Oh("è¯·æ±‚æ•°æ®è§£æå¤±è´¥");
             
             ChangePasswordDto payloadDto = AppRealization.JSON.Deserialize<ChangePasswordDto>(PayLoadContent);
             bool CodeValid = CaptchaCodeUtil.ValidateCaptchaCode(Ticket, payloadDto.Code);
-            if (!CodeValid) throw Oops.Oh("ÑéÖ¤ÂëÎŞĞ§»òÒÑ¹ıÆÚ£¬ÇëÖØĞÂ»ñÈ¡ÑéÖ¤ÂëºóÔÙÊÔ");
+            if (!CodeValid) throw Oops.Oh("éªŒè¯ç æ— æ•ˆæˆ–å·²è¿‡æœŸï¼Œè¯·é‡æ–°è·å–éªŒè¯ç åå†è¯•");
 
             if (payloadDto.OldPassword.Contains(payloadDto.NewPassword) || payloadDto.NewPassword.Contains(payloadDto.OldPassword))
             {
-                throw Oops.Oh("ĞÂÃÜÂëÓë¾ÉÃÜÂëÏàËÆ¶È¹ı¸ß£¬Çë¸ü»»ĞÂÃÜÂëºóÔÙÊÔ");
+                throw Oops.Oh("æ–°å¯†ç ä¸æ—§å¯†ç ç›¸ä¼¼åº¦è¿‡é«˜ï¼Œè¯·æ›´æ¢æ–°å¯†ç åå†è¯•");
             }
             var changeStatus=await userDomain.ChangePasswordAsync(payloadDto.UserId,payloadDto.OldPassword, payloadDto.NewPassword);
             await userAccountLogDomain.CreateUserAccountLogAsync(new UserAccountLogSDto()
             {
                 Id = AppCore.Guid(),
                 UserId = payloadDto.UserId,
-                TypeCode = UserAccountLogTypeEnum.ÃÜÂëĞŞ¸Ä.ToString(),
-                Remark = $"Ö´ĞĞÃÜÂëĞŞ¸Ä,ĞŞ¸ÄÊ±¼ä:{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")};Ö´ĞĞ½á¹û:{(changeStatus ? "³É¹¦" : "Ê§°Ü")}",
+                TypeCode = UserAccountLogTypeEnum.å¯†ç ä¿®æ”¹.ToString(),
+                Remark = $"æ‰§è¡Œå¯†ç ä¿®æ”¹,ä¿®æ”¹æ—¶é—´:{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")};æ‰§è¡Œç»“æœ:{(changeStatus ? "æˆåŠŸ" : "å¤±è´¥")}",
                 Meta = AppRealization.JSON.Serialize(new { pwdEncrypted = App.Encrypt(payloadDto.NewPassword) })
             });
             return changeStatus;
         }
 
         /// <summary>
-        /// <para>zh-cn:ÖØÖÃÃÜÂë</para>
+        /// <para>zh-cn:é‡ç½®å¯†ç </para>
         /// <para>en-us:Reset password</para>
         /// </summary>
         /// <param name="dto">
-        ///  <para>zh-cn:ÕË»§Êı¾İ´«Êä¶ÔÏó£¨°üº¬¼ÓÃÜ¸ºÔØ£©</para>
+        ///  <para>zh-cn:è´¦æˆ·æ•°æ®ä¼ è¾“å¯¹è±¡ï¼ˆåŒ…å«åŠ å¯†è´Ÿè½½ï¼‰</para>
         ///  <para>en-us:Account DTO (contains encrypted payload)</para>
         /// </param>
         /// <returns>
-        ///  <para>zh-cn:·µ»ØÖØÖÃ½á¹û£¬true±íÊ¾³É¹¦£¬false±íÊ¾Ê§°Ü</para>
+        ///  <para>zh-cn:è¿”å›é‡ç½®ç»“æœï¼Œtrueè¡¨ç¤ºæˆåŠŸï¼Œfalseè¡¨ç¤ºå¤±è´¥</para>
         ///  <para>en-us:Returns reset result, true indicates success, false indicates failure</para>
         /// </returns>
         [HttpPost("password/reset")]
         public async Task<string> ResetPasswordAsync(AccountDto dto)
         {
             if (dto == null || dto.Content.IsNullOrEmpty())
-                throw Oops.Oh("ÇëÇóÊı¾İ²»ÄÜÎª¿Õ");
+                throw Oops.Oh("è¯·æ±‚æ•°æ®ä¸èƒ½ä¸ºç©º");
             
             string AppId = _httpContextAccessor.HttpContext.Request.Headers["AppId"];
-            if (AppId.IsNullOrEmpty()) throw Oops.Oh("¿Í»§¶Ë·Ç·¨ÇëÇó");
+            if (AppId.IsNullOrEmpty()) throw Oops.Oh("å®¢æˆ·ç«¯éæ³•è¯·æ±‚");
             var App = await appInfoDomain.GetAppInfoAsync(AppId);
-            if (App == null) throw Oops.Oh("¿Í»§¶ËÓ¦ÓÃ²»´æÔÚ»òÒÑ±»½ûÓÃ");
+            if (App == null) throw Oops.Oh("å®¢æˆ·ç«¯åº”ç”¨ä¸å­˜åœ¨æˆ–å·²è¢«ç¦ç”¨");
 
             string Ticket = _httpContextAccessor.HttpContext.Request.Headers["Ticket"];
-            if (Ticket.IsNullOrEmpty()) throw Oops.Oh("¿Í»§¶Ë·Ç·¨ÇëÇó");
+            if (Ticket.IsNullOrEmpty()) throw Oops.Oh("å®¢æˆ·ç«¯éæ³•è¯·æ±‚");
 
            
             string PayLoadContent = App.Decrypt(dto.Content);
-            if (string.IsNullOrEmpty(PayLoadContent)) throw Oops.Oh("ÇëÇóÊı¾İ½âÎöÊ§°Ü");
+            if (string.IsNullOrEmpty(PayLoadContent)) throw Oops.Oh("è¯·æ±‚æ•°æ®è§£æå¤±è´¥");
 
             ResetPasswordDto resetPasswordDto = AppRealization.JSON.Deserialize<ResetPasswordDto>(PayLoadContent);
 
             bool CodeValid =CaptchaCodeUtil.ValidateCaptchaCode(Ticket,resetPasswordDto.Code);
-            if (!CodeValid) throw Oops.Oh("ÑéÖ¤ÂëÎŞĞ§»òÒÑ¹ıÆÚ£¬ÇëÖØĞÂ»ñÈ¡ÑéÖ¤ÂëºóÔÙÊÔ");
+            if (!CodeValid) throw Oops.Oh("éªŒè¯ç æ— æ•ˆæˆ–å·²è¿‡æœŸï¼Œè¯·é‡æ–°è·å–éªŒè¯ç åå†è¯•");
 
             string NewPassword = IUserDomain.GeneratePassword();
             var result=await userDomain.ResetPasswordAsync(resetPasswordDto.UserId, NewPassword);
@@ -142,8 +142,8 @@ namespace air.cloud.account.service.Impls.AccountServices.AccountServices
             {
                 Id = AppCore.Guid(),
                 UserId = resetPasswordDto.UserId,
-                TypeCode = UserAccountLogTypeEnum.ÃÜÂëÖØÖÃ.ToString(),
-                Remark = $"Ö´ĞĞÃÜÂëÖØÖÃ,ÖØÖÃÊ±¼ä:{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")};Ö´ĞĞ½á¹û:{(result ? "³É¹¦" : "Ê§°Ü")}",
+                TypeCode = UserAccountLogTypeEnum.å¯†ç é‡ç½®.ToString(),
+                Remark = $"æ‰§è¡Œå¯†ç é‡ç½®,é‡ç½®æ—¶é—´:{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")};æ‰§è¡Œç»“æœ:{(result ? "æˆåŠŸ" : "å¤±è´¥")}",
                 Meta=AppRealization.JSON.Serialize(new { pwdEncrypted=App.Encrypt(NewPassword)})
             });
             return result? NewPassword:string.Empty;

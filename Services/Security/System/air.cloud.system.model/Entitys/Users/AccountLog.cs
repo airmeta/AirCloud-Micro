@@ -35,10 +35,10 @@ namespace air.cloud.system.model.Entitys.Users
         public string TypeCode { get; set; }
 
         /// <summary>
-        /// <para>zh-cn:扩展字段（CLOB）</para>
-        /// <para>en-us:Meta information (CLOB)</para>
+        /// <para>zh-cn:扩展字段（TEXT）</para>
+        /// <para>en-us:Meta information (TEXT)</para>
         /// </summary>
-        [Column("META", TypeName = "CLOB")]
+        [Column("META", TypeName = "TEXT")]
         public string? Meta { get; set; }
 
         /// <summary>
